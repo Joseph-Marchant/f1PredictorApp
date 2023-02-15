@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "5VoffPm8HY8/h1cUxSw7zmzFw8NyaXpKHQBf9gloXoTkzv//15XVLOr9R/pkdUkELPXnYbFYGhysSu3eXWmQfA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\jwf_m\\Documents\\Code\\F1PredictorApp\\F1PredictorApp\\F1PredictorAppClass.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jwf_m\\.nuget\\packages\\csvhelper\\30.0.1\\csvhelper.30.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
