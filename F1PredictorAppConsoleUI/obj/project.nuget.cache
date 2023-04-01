@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "R7lmsLi4cA3p7nmRwaifqr0671Jssa6KkiulTA6dY2qlvHCsX4Ydb1p76+HxRVNm5UMzrFPU+qO+PBNEfAzMAw==",
+  "dgSpecHash": "WjJubyvgALhyZgxq2q4NztjZ6krJ4ImJ0DbfII5L7QVnbHtmjAsGi1cavk0BiRy4ir3OFJokmoTEl5KEU66nrQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\jwf_m\\Documents\\Code\\F1PredictorApp\\F1PredictorAppConsoleUI\\F1PredictorAppConsoleUI.csproj",
   "expectedPackageFiles": [
@@ -30,6 +30,7 @@
     "C:\\Users\\jwf_m\\.nuget\\packages\\microsoft.extensions.options\\7.0.0\\microsoft.extensions.options.7.0.0.nupkg.sha512",
     "C:\\Users\\jwf_m\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\7.0.0\\microsoft.extensions.options.configurationextensions.7.0.0.nupkg.sha512",
     "C:\\Users\\jwf_m\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
+    "C:\\Users\\jwf_m\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\jwf_m\\.nuget\\packages\\system.diagnostics.eventlog\\7.0.0\\system.diagnostics.eventlog.7.0.0.nupkg.sha512",
     "C:\\Users\\jwf_m\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\jwf_m\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",

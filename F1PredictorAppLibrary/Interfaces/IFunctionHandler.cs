@@ -9,5 +9,6 @@
         string ScorePredictions();
         string ResetPredictions();
         string ShowScores();
+        string GetStandings();
     }
 }

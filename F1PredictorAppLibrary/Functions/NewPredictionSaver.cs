@@ -13,7 +13,7 @@ public class NewPredictionSaver : INewPredictionSaver
             predictions.Add(prediction);
         }
 
-        if (prediction.First is not null || prediction.Second is not null || prediction.Third is not null)
+        if (!string.IsNullOrEmpty(prediction.First) || !string.IsNullOrEmpty(prediction.Second) || !string.IsNullOrEmpty(prediction.Third))
         {
             throw new ArgumentException($"{prediction.Name} already has a prediction saved");
         }

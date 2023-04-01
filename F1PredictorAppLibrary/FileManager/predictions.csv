@@ -1,4 +1,8 @@
 Name,First,Second,Third,Points,OnePointers,TwoPointers,ThreePointers
-Joe,Alb,Rus,Zho,0,0,0,0
-Will,Nor,Bot,Ham,0,0,0,0
-AI,Dev,Nor,Bot,0,0,0,0
+Joe,Alo,Ham,Rus,1,1,0,0
+Will,Alo,Ver,Ham,1,1,0,0
+Dan,Alo,Ham,Str,1,1,0,0
+Yoda,Ham,Ver,Alo,1,1,0,0
+Smiffy,,,,0,0,0,0
+AI,Nor,Alb,Dev,1,1,0,0
+Smart AI,Ham,Rus,Gas,0,0,0,0

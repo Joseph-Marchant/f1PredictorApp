@@ -11,7 +11,7 @@ public class DriverLoader : IDriverLoader
         var path = @"C:\Users\jwf_m\Documents\Code\F1PredictorApp\F1PredictorAppLibrary\FileManager\drivers.csv";
         using var streamReader = new StreamReader(path);
         using var csvReader = new CsvReader(streamReader, CultureInfo.CurrentCulture);
-        var teams = csvReader.GetRecords<Team>();
+        var teams = csvReader.GetRecords<Team>().ToList();
 
         var drivers = new List<string>();
         foreach (var team in teams)

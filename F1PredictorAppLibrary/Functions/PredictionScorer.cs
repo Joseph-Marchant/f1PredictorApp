@@ -36,8 +36,8 @@ public class PredictionScorer : IPredictionScorer
             else if (pointCount == 2) prediction.TwoPointers += 1;
             else if (pointCount == 3) prediction.ThreePointers += 1;
 
-            if (result == string.Empty) raceReport += $"{prediction.Name} did not get any right.\n";
-            else raceReport += $"{prediction.Name} was right about {result}.\n";
+            if (result == string.Empty) raceReport += $"{prediction.Name} did not get any right.";
+            else raceReport += $"{prediction.Name} was right about {result}.";
         }
 
         return raceReport;

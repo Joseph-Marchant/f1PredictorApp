@@ -6,10 +6,10 @@ public class Team
     public string DriverOne { get; set; }
     public string DriverTwo { get; set;}
 
-    public Team(string teamName, string dirverOne, string dirverTwo)
+    public Team(string TeamName, string DriverOne, string DriverTwo)
     {
-        TeamName = teamName;
-        DriverOne = dirverOne;
-        DriverTwo = dirverTwo;
+        this.TeamName = TeamName;
+        this.DriverOne = DriverOne;
+        this.DriverTwo = DriverTwo;
     }
 }

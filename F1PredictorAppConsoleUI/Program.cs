@@ -5,6 +5,7 @@ using F1PredictorAppLibrary.FileManager;
 using F1PredictorAppLibrary.Functions;
 using F1PredictorAppLibrary.InformationGetters;
 using F1PredictorAppLibrary.Interfaces;
+using F1PredictorAppLibrary.Standings;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -21,6 +22,7 @@ public static class Program
                 services.AddTransient<INewPredictionSaver, NewPredictionSaver>();
                 services.AddTransient<IPredictionEditor, PredictionEditor>();
                 services.AddSingleton<IPredictionGenerator, PredictionGenerator>();
+                services.AddSingleton<ISmartAiGenerator, SmartAiGenerator>();
                 services.AddSingleton<IPredictionScorer, PredictionScorer>();
                 services.AddSingleton<IScoreShower, ScoreShower>();
                 services.AddSingleton<IDriverLineUpEditor, DriverLineUpEditor>();
@@ -29,6 +31,7 @@ public static class Program
                 services.AddTransient<IPredictionLoader, PredictionLoader>();
                 services.AddTransient<IDriverLoader, DriverLoader>();
                 services.AddSingleton<IDriverSaver, DriverSaver>();
+                services.AddSingleton<IStandingsLoader, StandingsLoader>();
                 services.AddSingleton<INameGetter, NameGetter>();
                 services.AddSingleton<IDriverGetter, DriverGetter>();
                 services.AddSingleton<IPredictionGetter,PredictionGetter>();

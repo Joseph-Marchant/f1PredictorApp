@@ -1,6 +1,7 @@
 ﻿namespace F1PredictorAppLibrary.Functions;
 
 using F1PredictorAppLibrary.Interfaces;
+using System.Text;
 
 public class PredictionEditor : IPredictionEditor
 {
@@ -9,22 +10,23 @@ public class PredictionEditor : IPredictionEditor
         var predictionFromList = RetrivePrediction(predictions, name);
         var updatedPrediction = UpdatePrediction(predictions, newPredictionDrivers, predictionFromList);
 
-        var confirmationMessage = 
-            updatedPrediction.Name +
-            "'s prediction of " +
-            predictionFromList.First +
-            predictionFromList.Second +
-            predictionFromList.Third +
-            " has been changed to " +
-            updatedPrediction.First +
-            updatedPrediction.Second +
-            updatedPrediction.Third;
+        var confirmationMessage = new StringBuilder();
+        confirmationMessage.Append(updatedPrediction.Name);
+        confirmationMessage.Append("'s prediction of ");
+        confirmationMessage.Append(predictionFromList.First);
+        confirmationMessage.Append(predictionFromList.Second);
+        confirmationMessage.Append(predictionFromList.Third);
+        confirmationMessage.Append(" has been changed to ");
+        confirmationMessage.Append(updatedPrediction.First);
+        confirmationMessage.Append(updatedPrediction.Second);
+        confirmationMessage.Append(updatedPrediction.Third);
 
-        return confirmationMessage;
+        return confirmationMessage.ToString();
     }
 
     private Prediction RetrivePrediction(List<Prediction> predictions, string name)
     {
+        if (string.IsNullOrEmpty(name)) throw new ArgumentNullException("No name was passed through");
         var predictionFromList = predictions.Where(p => p.Name == name).FirstOrDefault();
         if (predictionFromList is null) throw new ArgumentException("Person could not be found");
 
@@ -37,6 +39,9 @@ public class PredictionEditor : IPredictionEditor
 
     private Prediction UpdatePrediction(List<Prediction> predictions, List<string> newPredictionDrivers, Prediction predictionFromList)
     {
+        if (newPredictionDrivers is null) throw new ArgumentNullException("No new dirvers were given");
+        if (newPredictionDrivers.Count != 3) throw new ArgumentException("Not enough drivers input");
+
         var updatedPrediction = new Prediction(
                     predictionFromList.Name,
                     newPredictionDrivers[0],

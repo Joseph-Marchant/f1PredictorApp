@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "X+v2Bz6ctt4h3zaihzBNmPEQX3FA2OiL3bjSl0R/gZzFMK2wxayBpSlkkTSoFw+J0HdqLktio4MLoDRX+ykE9g==",
+  "dgSpecHash": "msh7DnG4vK5QiC631Pu/pHuWx+WaS63jKbRJcCfcI6P7caBPulQuNbb+7DwTCv6ib7lL5hcZKhg3SwqK0bOi3Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\jwf_m\\Documents\\Code\\F1PredictorApp\\F1PredictorAppLibrary\\F1PredictorAppLibrary.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jwf_m\\.nuget\\packages\\csvhelper\\30.0.1\\csvhelper.30.0.1.nupkg.sha512",
+    "C:\\Users\\jwf_m\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\jwf_m\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.12\\microsoft.windowsdesktop.app.ref.6.0.12.nupkg.sha512",
     "C:\\Users\\jwf_m\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.12\\microsoft.netcore.app.ref.6.0.12.nupkg.sha512",
     "C:\\Users\\jwf_m\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.12\\microsoft.aspnetcore.app.ref.6.0.12.nupkg.sha512"

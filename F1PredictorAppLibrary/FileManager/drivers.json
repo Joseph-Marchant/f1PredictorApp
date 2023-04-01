@@ -1,0 +1,54 @@
+{
+  "Teams": [
+    {
+      "TeamName": "RedBull",
+      "DriverOne": "Ver",
+      "DriverTwo": "Per"
+    },
+    {
+      "TeamName": "Ferrari",
+      "DriverOne": "Lec",
+      "DriverTwo": "Sai"
+    },
+    {
+      "TeamName": "Mercedes",
+      "DriverOne": "Rus",
+      "DriverTwo": "Ham"
+    },
+    {
+      "TeamName": "Alpine",
+      "DriverOne": "Oco",
+      "DriverTwo": "Gas"
+    },
+    {
+      "TeamName": "McLaren",
+      "DriverOne": "Nor",
+      "DriverTwo": "Pia"
+    },
+    {
+      "TeamName": "AlfaRomeo",
+      "DriverOne": "Bot",
+      "DriverTwo": "Zho"
+    },
+    {
+      "TeamName": "AstonMartin",
+      "DriverOne": "Alo",
+      "DriverTwo": "Str"
+    },
+    {
+      "TeamName": "Haas",
+      "DriverOne": "Mag",
+      "DriverTwo": "Hul"
+    },
+    {
+      "TeamName": "AlphaTauri",
+      "DriverOne": "Tsu",
+      "DriverTwo": "Dev"
+    },
+    {
+      "TeamName": "Williams",
+      "DriverOne": "Alb",
+      "DriverTwo": "Sar"
+    }
+  ]
+}

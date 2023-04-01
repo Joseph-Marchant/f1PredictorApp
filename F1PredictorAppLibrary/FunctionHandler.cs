@@ -1,6 +1,7 @@
 ﻿namespace F1PredictorAppLibrary;
 
 using F1PredictorAppLibrary.Interfaces;
+using System.Text;
 
 public class FunctionHandler : IFunctionHandler
 {
@@ -50,6 +51,7 @@ public class FunctionHandler : IFunctionHandler
         try
         {
             var responseMessage = this.serviceContainer.predictionGenerator.GeneratePrediction(predictions);
+            responseMessage = responseMessage + "\n" + this.serviceContainer.smartAiGenerator.GenerateSmartAiPrediction(predictions);
             this.serviceContainer.predictionSaver.SavePredictions(predictions);
             return responseMessage;
         }
@@ -106,6 +108,25 @@ public class FunctionHandler : IFunctionHandler
         try
         {
             return this.serviceContainer.predictionResetter.ResetPreditions(predictions);
+        }
+        catch (Exception ex)
+        {
+            return ex.Message;
+        }
+    }
+
+    public string GetStandings()
+    {
+        try
+        {
+            var standings = this.serviceContainer.standingsLoader.GetStandings();
+            var sb = new StringBuilder();
+            foreach (var standing in standings)
+            {
+                sb.Append($"{standing.Driver} is in {standing.Position} with {standing.Points} points.\n");
+            }
+
+            return sb.ToString();
         }
         catch (Exception ex)
         {
