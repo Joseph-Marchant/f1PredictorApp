@@ -1,6 +1,5 @@
-﻿using CsvHelper;
-using F1PredictorAppLibrary.Interfaces;
-using System.Globalization;
+﻿using F1PredictorAppLibrary.Interfaces;
+using Newtonsoft.Json;
 
 namespace F1PredictorAppLibrary.FileManager;
 
@@ -8,13 +7,10 @@ public class DriverLoader : IDriverLoader
 {
     public List<string> LoadDrivers()
     {
-        var path = @"C:\Users\jwf_m\Documents\Code\F1PredictorApp\F1PredictorAppLibrary\FileManager\drivers.csv";
-        using var streamReader = new StreamReader(path);
-        using var csvReader = new CsvReader(streamReader, CultureInfo.CurrentCulture);
-        var teams = csvReader.GetRecords<Team>().ToList();
+        var teams = this.LoadTeams();
 
-        var drivers = new List<string>();
-        foreach (var team in teams)
+        List<string> drivers = new List<string>();
+        foreach(var team in teams)
         {
             drivers.Add(team.DriverOne);
             drivers.Add(team.DriverTwo);
@@ -25,10 +21,18 @@ public class DriverLoader : IDriverLoader
 
     public List<Team> LoadTeams()
     {
-        var path = @"C:\Users\jwf_m\Documents\Code\F1PredictorApp\F1PredictorAppLibrary\FileManager\drivers.csv";
-        using var streamReader = new StreamReader(path);
-        using var csvReader = new CsvReader(streamReader, CultureInfo.CurrentCulture);
-        var teams = csvReader.GetRecords<Team>().ToList();
-        return teams;
+        var path = @"C:\Users\jwf_m\Documents\Code\F1PredictorApp\F1PredictorAppLibrary\FileManager\drivers.json";
+        using (var r = new StreamReader(path))
+        {
+            var json = r.ReadToEnd();
+            if (json == null) throw new FileLoadException("JSON failed to read drivers");
+
+            List<Team>? drivers = JsonConvert.DeserializeObject<List<Team>>(json);
+            if (drivers == null) throw new FileLoadException("JSON failed to deserialise drivers");
+
+            return drivers;
+        }
+
+        throw new FileLoadException("Could not load predictions");
     }
 }

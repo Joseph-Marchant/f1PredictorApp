@@ -2,15 +2,15 @@
 
 using CsvHelper;
 using F1PredictorAppLibrary.Interfaces;
+using Newtonsoft.Json;
 using System.Globalization;
 
 public class DriverSaver : IDriverSaver
 {
     public void SaveDrivers(List<Team> teams)
     {
-        var path = @"C:\Users\jwf_m\Documents\Code\F1PredictorApp\F1PredictorAppLibrary\FileManager\drivers.csv";
-        using var streamWriter = new StreamWriter(path);
-        using var csvWriter = new CsvWriter(streamWriter, CultureInfo.InvariantCulture);
-        csvWriter.WriteRecords(teams);
+        var path = @"C:\Users\jwf_m\Documents\Code\F1PredictorApp\F1PredictorAppLibrary\FileManager\drivers.json";
+        var json = JsonConvert.SerializeObject(teams, Formatting.Indented);
+        File.WriteAllText(path, json);
     }
 }

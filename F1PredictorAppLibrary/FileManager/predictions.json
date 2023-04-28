@@ -1,74 +1,72 @@
-{
-  "Predictions": [
-    {
-      "Name": "Joe",
-      "First": "Alo",
-      "Second": "Per",
-      "Third": "Ver",
-      "Points": 1,
-      "OnePointers": 1,
-      "TwoPointers": 0,
-      "ThreePointers": 0
-    },
-    {
-      "Name": "Will",
-      "First": "Alo",
-      "Second": "Ver",
-      "Third": "Rus",
-      "Points": 0,
-      "OnePointers": 0,
-      "TwoPointers": 0,
-      "ThreePointers": 0
-    },
-    {
-      "Name": "Dan",
-      "First": "Per",
-      "Second": "Alo",
-      "Third": "Sai",
-      "Points": 0,
-      "OnePointers": 0,
-      "TwoPointers": 0,
-      "ThreePointers": 0
-    },
-    {
-      "Name": "Yoda",
-      "First": "",
-      "Second": "",
-      "Third": "",
-      "Points": 1,
-      "OnePointers": 1,
-      "TwoPointers": 0,
-      "ThreePointers": 0
-    },
-    {
-      "Name": "Smiffy",
-      "First": "",
-      "Second": "",
-      "Third": "",
-      "Points": 0,
-      "OnePointers": 0,
-      "TwoPointers": 0,
-      "ThreePointers": 0
-    },
-    {
-      "Name": "AI",
-      "First": "Per",
-      "Second": "Tsu",
-      "Third": "Oco",
-      "Points": 0,
-      "OnePointers": 0,
-      "TwoPointers": 0,
-      "ThreePointers": 0
-    },
-    {
-      "Name": "Smart AI",
-      "First": "",
-      "Second": "",
-      "Third": "",
-      "Points": 0,
-      "OnePointers": 0,
-      "TwoPointers": 0,
-      "ThreePointers": 0
-    }
-  ]
-}
+[
+  {
+    "Name": "Joe",
+    "First": "Lec",
+    "Second": "Per",
+    "Third": "Alo",
+    "Points": 2,
+    "OnePointers": 2,
+    "TwoPointers": 0,
+    "ThreePointers": 0
+  },
+  {
+    "Name": "Will",
+    "First": "",
+    "Second": "",
+    "Third": "",
+    "Points": 1,
+    "OnePointers": 1,
+    "TwoPointers": 0,
+    "ThreePointers": 0
+  },
+  {
+    "Name": "Dan",
+    "First": "",
+    "Second": "",
+    "Third": "",
+    "Points": 2,
+    "OnePointers": 2,
+    "TwoPointers": 0,
+    "ThreePointers": 0
+  },
+  {
+    "Name": "Yoda",
+    "First": "",
+    "Second": "",
+    "Third": "",
+    "Points": 2,
+    "OnePointers": 2,
+    "TwoPointers": 0,
+    "ThreePointers": 0
+  },
+  {
+    "Name": "Smiffy",
+    "First": "",
+    "Second": "",
+    "Third": "",
+    "Points": 0,
+    "OnePointers": 0,
+    "TwoPointers": 0,
+    "ThreePointers": 0
+  },
+  {
+    "Name": "AI",
+    "First": "Zho",
+    "Second": "Tsu",
+    "Third": "Gas",
+    "Points": 1,
+    "OnePointers": 1,
+    "TwoPointers": 0,
+    "ThreePointers": 0
+  },
+  {
+    "Name": "Smart AI",
+    "First": "Oco",
+    "Second": "Alo",
+    "Third": "Hul",
+    "Points": 0,
+    "OnePointers": 0,
+    "TwoPointers": 0,
+    "ThreePointers": 0
+  }
+]

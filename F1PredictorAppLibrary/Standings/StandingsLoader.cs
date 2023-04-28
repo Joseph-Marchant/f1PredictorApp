@@ -9,13 +9,13 @@ public class StandingsLoader : IStandingsLoader
     {
         var path = @"C:\Users\jwf_m\Documents\Code\F1PredictorApp\F1PredictorAppLibrary\Standings\standings.json";
 
-        using (StreamReader r = new StreamReader(path))
+        using (var r = new StreamReader(path))
         {
             var json = r.ReadToEnd();
-            if (json == null) throw new FileLoadException("JSON failed to read");
+            if (json == null) throw new FileLoadException("JSON failed to read standings");
 
             List<Entrant>? entrants = JsonConvert.DeserializeObject<List<Entrant>>(json);
-            if (entrants == null) throw new FileLoadException("JSON failed to deserialise");
+            if (entrants == null) throw new FileLoadException("JSON failed to deserialise standings");
 
             entrants = entrants.OrderBy(e => e.Position).ToList();
             return entrants;
