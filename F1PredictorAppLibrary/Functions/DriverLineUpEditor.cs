@@ -6,10 +6,13 @@ public class DriverLineUpEditor : IDriverLineUpEditor
 {
     private readonly IDriverLoader driverLoader;
     private readonly IDriverSaver driverSaver;
-    public DriverLineUpEditor(IDriverLoader driverLoader, IDriverSaver driverSaver)
+    private readonly IStandingsLoader standingsLoader;
+
+    public DriverLineUpEditor(IDriverLoader driverLoader, IDriverSaver driverSaver, IStandingsLoader standingsLoader)
     {
         this.driverLoader = driverLoader;
         this.driverSaver = driverSaver;
+        this.standingsLoader = standingsLoader;
     }
 
     public string EditDriverLineUp()
@@ -28,6 +31,7 @@ public class DriverLineUpEditor : IDriverLineUpEditor
         else throw new ArgumentException("Invalid Driver");
 
         this.driverSaver.SaveDrivers(teams);
+        this.standingsLoader.AddDriver(newDriver);
 
         return $"{driverToReplace} has been replaced by {newDriver}";
     }

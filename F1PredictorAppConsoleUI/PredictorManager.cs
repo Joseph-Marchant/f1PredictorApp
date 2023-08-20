@@ -38,9 +38,9 @@ public class PredictorManager : IPredictorManager
         var inputAsString = Console.ReadLine();
         var inputIsInt = int.TryParse(inputAsString, out var response);
 
-        if (!inputIsInt || response < 0 || response > 9)
+        if (!inputIsInt || response < 1 || response > 8)
         {
-            Console.WriteLine("Must choose between 1 and 8");
+            Console.WriteLine("Must choose between 1 and 9");
             return this.GetFunction();
         }
 

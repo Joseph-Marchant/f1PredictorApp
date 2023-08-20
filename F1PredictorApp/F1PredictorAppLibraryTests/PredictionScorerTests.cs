@@ -67,15 +67,7 @@ public class PredictionScorerTests
     {
         return new List<Prediction> 
         {
-            new Prediction(
-                "Joe",
-                "Ver",
-                "Ham",
-                "Per",
-                0,
-                0,
-                0,
-                0)
+            new Prediction("Joe","Ver","Ham","Per", 0, 0, 0, 0, 0)
         };
     }
 }

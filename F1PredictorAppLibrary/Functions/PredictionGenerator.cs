@@ -26,7 +26,8 @@ public class PredictionGenerator : IPredictionGenerator
                     AIPredictionFromList.Points,
                     AIPredictionFromList.OnePointers,
                     AIPredictionFromList.TwoPointers,
-                    AIPredictionFromList.ThreePointers);
+                    AIPredictionFromList.ThreePointers,
+                    AIPredictionFromList.Position);
 
         predictions.Remove(AIPredictionFromList);
         predictions.Add(updatedAIPrediction);

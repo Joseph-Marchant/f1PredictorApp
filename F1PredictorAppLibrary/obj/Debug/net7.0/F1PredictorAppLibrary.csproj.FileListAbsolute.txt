@@ -1,0 +1,12 @@
+C:\Users\jwf_m\Documents\Code\F1PredictorApp\F1PredictorAppLibrary\bin\Debug\net7.0\F1PredictorAppLibrary.deps.json
+C:\Users\jwf_m\Documents\Code\F1PredictorApp\F1PredictorAppLibrary\bin\Debug\net7.0\F1PredictorAppLibrary.dll
+C:\Users\jwf_m\Documents\Code\F1PredictorApp\F1PredictorAppLibrary\bin\Debug\net7.0\F1PredictorAppLibrary.pdb
+C:\Users\jwf_m\Documents\Code\F1PredictorApp\F1PredictorAppLibrary\obj\Debug\net7.0\F1PredictorAppLibrary.csproj.AssemblyReference.cache
+C:\Users\jwf_m\Documents\Code\F1PredictorApp\F1PredictorAppLibrary\obj\Debug\net7.0\F1PredictorAppLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jwf_m\Documents\Code\F1PredictorApp\F1PredictorAppLibrary\obj\Debug\net7.0\F1PredictorAppLibrary.AssemblyInfoInputs.cache
+C:\Users\jwf_m\Documents\Code\F1PredictorApp\F1PredictorAppLibrary\obj\Debug\net7.0\F1PredictorAppLibrary.AssemblyInfo.cs
+C:\Users\jwf_m\Documents\Code\F1PredictorApp\F1PredictorAppLibrary\obj\Debug\net7.0\F1PredictorAppLibrary.csproj.CoreCompileInputs.cache
+C:\Users\jwf_m\Documents\Code\F1PredictorApp\F1PredictorAppLibrary\obj\Debug\net7.0\F1PredictorAppLibrary.dll
+C:\Users\jwf_m\Documents\Code\F1PredictorApp\F1PredictorAppLibrary\obj\Debug\net7.0\refint\F1PredictorAppLibrary.dll
+C:\Users\jwf_m\Documents\Code\F1PredictorApp\F1PredictorAppLibrary\obj\Debug\net7.0\F1PredictorAppLibrary.pdb
+C:\Users\jwf_m\Documents\Code\F1PredictorApp\F1PredictorAppLibrary\obj\Debug\net7.0\ref\F1PredictorAppLibrary.dll

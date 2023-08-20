@@ -11,17 +11,7 @@ public class PredictionGeneratorTests
         var subject = this.GetSubject();
         var predictions = new List<Prediction>
         {
-            new Prediction
-            (
-                "AI",
-                null,
-                null,
-                null,
-                0,
-                0,
-                0,
-                0
-            )
+            new Prediction("AI", null, null, null, 0, 0, 0, 0, 0)
         };
 
         var actual = subject.GeneratePrediction(predictions);
@@ -44,17 +34,7 @@ public class PredictionGeneratorTests
         var subject = this.GetSubject();
         var predictions = new List<Prediction>
         {
-            new Prediction
-            (
-                "AI",
-                "Ver",
-                "Ham",
-                "Per",
-                0,
-                0,
-                0,
-                0
-            )
+            new Prediction("AI", "Ver", "Ham", "Per", 0, 0, 0, 0, 0)
         };
 
         Assert.ThrowsException<ArgumentException>(() => subject.GeneratePrediction(predictions));

@@ -13,6 +13,8 @@ public class ScoreShower : IScoreShower
             .ThenBy(p => p.Name)
             .ToList();
 
+        // TODO Add position markings
+
         foreach (var prediction in orderedPredictions)
         {
             scores += $"{prediction.Name} has {prediction.Points}.\n";

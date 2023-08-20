@@ -19,7 +19,10 @@ public class ServiceContainer : IServiceContainer
         IPredictionSaver predictionSaver,
         INameGetter nameGetter,
         IDriverGetter driverGetter,
-        IStandingsLoader standingsLoader)
+        IStandingsLoader standingsLoader,
+        IStandingsUpdater standingsUpdater,
+        IRaceResultGetter raceResultGetter
+        )
     {
         this.newPredictionSaver = newPredictionSaver;
         this.predictionLoader = predictionLoader;
@@ -35,6 +38,8 @@ public class ServiceContainer : IServiceContainer
         this.nameGetter = nameGetter;
         this.driverGetter = driverGetter;
         this.standingsLoader = standingsLoader;
+        this.standingsUpdater = standingsUpdater;
+        this.raceResultGetter = raceResultGetter;
     }
 
     public INewPredictionSaver newPredictionSaver { get; private set; }
@@ -51,4 +56,6 @@ public class ServiceContainer : IServiceContainer
     public INameGetter nameGetter { get; private set; }
     public IDriverGetter driverGetter { get; private set; }
     public IStandingsLoader standingsLoader { get; private set; }
+    public IStandingsUpdater standingsUpdater { get; private set; }
+    public IRaceResultGetter raceResultGetter { get; private set; }
 }

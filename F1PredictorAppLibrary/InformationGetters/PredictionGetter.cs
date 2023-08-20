@@ -19,7 +19,7 @@ public class PredictionGetter : IPredictionGetter
 
         var prediction = driverGetter.GetDrivers("Prediction: ");
 
-        var newPrediction = new Prediction(name, prediction[0], prediction[1], prediction[2], 0, 0, 0, 0);
+        var newPrediction = new Prediction(name, prediction[0], prediction[1], prediction[2], 0, 0, 0, 0, 0);
 
         return newPrediction;
     }

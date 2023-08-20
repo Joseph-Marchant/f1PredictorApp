@@ -10,8 +10,9 @@ public class Prediction
     public int OnePointers { get; set; }
     public int TwoPointers { get; set; }
     public int ThreePointers { get; set; }
+    public int Position {  get; set; }
 
-    public Prediction(string name, string first, string second, string third, int points, int onePointers, int twoPointers, int thirdPointers)
+    public Prediction(string name, string first, string second, string third, int points, int onePointers, int twoPointers, int thirdPointers, int position)
     {
         this.Name = name;
         this.First = first;
@@ -21,17 +22,19 @@ public class Prediction
         this.OnePointers = onePointers;
         this.TwoPointers = twoPointers;
         this.ThreePointers = thirdPointers;
+        this.Position = position;
     }
 
     public Prediction()
     {
         this.Name = string.Empty;
-        this.First = null;
-        this.Second = null;
-        this.Third = null;
+        this.First = string.Empty;
+        this.Second = string.Empty;
+        this.Third = string.Empty;
         this.Points = 0;
         this.OnePointers = 0;
         this.TwoPointers = 0;
         this.ThreePointers = 0;
+        this.Position = 0;
     }
 }

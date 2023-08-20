@@ -18,5 +18,6 @@ namespace F1PredictorAppLibrary.Interfaces
         public INameGetter nameGetter { get; }
         public IDriverGetter driverGetter { get; }
         public IStandingsLoader standingsLoader { get; }
+        public IRaceResultGetter raceResultGetter { get; }
     }   
 }

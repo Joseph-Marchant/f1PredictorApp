@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "ZZfwePRVqKo8qtxnIUxZZj9cRPBOoD8VMB/kEd53Fu/vkXDt/2rGs1CKV+Bw8+bpR40msRudoYTZCUhDb1zn3Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\jwf_m\\Documents\\Code\\F1PredictorApp\\F1PredictorApp\\Services\\F1PredictorApp.Services.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jwf_m\\.nuget\\packages\\csvhelper\\30.0.1\\csvhelper.30.0.1.nupkg.sha512",
+    "C:\\Users\\jwf_m\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

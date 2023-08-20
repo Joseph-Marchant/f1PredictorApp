@@ -92,12 +92,14 @@ public class NewPredictionSaverTests
                 0,
                 0,
                 0,
-            0)};
+                0,
+                0
+            )};
     }
 
     private Prediction GetPrediction()
     {
-        return new Prediction("Joe", "Ver", "Ham", "Per", 0, 0, 0, 0);
+        return new Prediction("Joe", "Ver", "Ham", "Per", 0, 0, 0, 0, 0);
     }
 
     private INewPredictionSaver GetSubject()

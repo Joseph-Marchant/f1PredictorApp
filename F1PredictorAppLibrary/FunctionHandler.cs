@@ -64,7 +64,7 @@ public class FunctionHandler : IFunctionHandler
     public string ScorePredictions()
     {
         var predictions = this.LoadPredictions();
-        var result = this.serviceContainer.driverGetter.GetDrivers("Result: ");
+        var result = this.UpdateStandings();
         try
         {
             var responseMessage = this.serviceContainer.predictionScorer.ScorePredictions(predictions, result);
@@ -132,6 +132,14 @@ public class FunctionHandler : IFunctionHandler
         {
             return ex.Message;
         }
+    }
+
+    private List<string> UpdateStandings()
+    {
+        var standings = this.serviceContainer.standingsLoader.GetStandings();
+        var result = this.serviceContainer.raceResultGetter.GetRaceResult(standings);
+        this.serviceContainer.standingsLoader.SaveStandings(standings);
+        return result.Take(3).ToList();
     }
 
     private List<Prediction> LoadPredictions()

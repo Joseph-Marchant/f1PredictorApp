@@ -32,6 +32,8 @@ public static class Program
                 services.AddTransient<IDriverLoader, DriverLoader>();
                 services.AddSingleton<IDriverSaver, DriverSaver>();
                 services.AddSingleton<IStandingsLoader, StandingsLoader>();
+                services.AddTransient<IStandingsUpdater, StandingsUpdater>();
+                services.AddTransient<IRaceResultGetter, RaceResultGetter>();
                 services.AddSingleton<INameGetter, NameGetter>();
                 services.AddSingleton<IDriverGetter, DriverGetter>();
                 services.AddSingleton<IPredictionGetter,PredictionGetter>();

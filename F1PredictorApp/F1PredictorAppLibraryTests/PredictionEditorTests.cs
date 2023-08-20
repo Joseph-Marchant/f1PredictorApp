@@ -89,28 +89,14 @@ public class PredictionEditorTests
     private List<Prediction> GetPredictionList()
     {
         return new List<Prediction> {
-            new Prediction(
-                "Joe",
-                "Ver",
-                "Ham",
-                "Per",
-                0,
-                0,
-                0,
-            0)};
+            new Prediction("Joe", "Ver", "Ham", "Per", 0, 0, 0, 0, 0)
+        };
     }
 
     private List<Prediction> GetPredictionListWithNullPredictions()
     {
         return new List<Prediction> {
-            new Prediction(
-                "Joe",
-                null,
-                null,
-                null,
-                0,
-                0,
-                0,
-            0)};
+            new Prediction("Joe", null, null, null, 0, 0, 0, 0, 0)
+        };
     }
 }

@@ -50,7 +50,8 @@ public class PredictionEditor : IPredictionEditor
                     predictionFromList.Points,
                     predictionFromList.OnePointers,
                     predictionFromList.TwoPointers,
-                    predictionFromList.ThreePointers);
+                    predictionFromList.ThreePointers,
+                    predictionFromList.Position);
 
         predictions.Remove(predictionFromList);
         predictions.Add(updatedPrediction);

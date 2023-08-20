@@ -28,7 +28,8 @@ public class SmartAiGenerator : ISmartAiGenerator
                     AiPredictionFromList.Points,
                     AiPredictionFromList.OnePointers,
                     AiPredictionFromList.TwoPointers,
-                    AiPredictionFromList.ThreePointers);
+                    AiPredictionFromList.ThreePointers,
+                    AiPredictionFromList.Position);
 
         predictions.Remove(AiPredictionFromList);
         predictions.Add(updatedAIPrediction);
