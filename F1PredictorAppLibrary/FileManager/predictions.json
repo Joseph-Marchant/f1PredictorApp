@@ -1,45 +1,23 @@
 [
   {
-    "Name": "Joe",
-    "First": "",
-    "Second": "",
-    "Third": "",
-    "Points": 10,
-    "OnePointers": 6,
-    "TwoPointers": 2,
-    "ThreePointers": 0,
-    "Position": 1
-  },
-  {
     "Name": "Will",
     "First": "",
     "Second": "",
     "Third": "",
-    "Points": 4,
-    "OnePointers": 4,
+    "Points": 6,
+    "OnePointers": 6,
     "TwoPointers": 0,
     "ThreePointers": 0,
     "Position": 5
-  },
-  {
-    "Name": "Dan",
-    "First": "",
-    "Second": "",
-    "Third": "",
-    "Points": 3,
-    "OnePointers": 3,
-    "TwoPointers": 0,
-    "ThreePointers": 0,
-    "Position": 1
   },
   {
     "Name": "Yoda",
     "First": "",
     "Second": "",
     "Third": "",
-    "Points": 3,
-    "OnePointers": 3,
-    "TwoPointers": 0,
+    "Points": 8,
+    "OnePointers": 6,
+    "TwoPointers": 1,
     "ThreePointers": 0,
     "Position": 1
   },
@@ -55,12 +33,23 @@
     "Position": 7
   },
   {
+    "Name": "Joe",
+    "First": "",
+    "Second": "",
+    "Third": "",
+    "Points": 14,
+    "OnePointers": 6,
+    "TwoPointers": 4,
+    "ThreePointers": 0,
+    "Position": 1
+  },
+  {
     "Name": "AI",
     "First": "",
     "Second": "",
     "Third": "",
-    "Points": 2,
-    "OnePointers": 2,
+    "Points": 3,
+    "OnePointers": 3,
     "TwoPointers": 0,
     "ThreePointers": 0,
     "Position": 4
@@ -70,10 +59,21 @@
     "First": "",
     "Second": "",
     "Third": "",
-    "Points": 4,
-    "OnePointers": 2,
+    "Points": 7,
+    "OnePointers": 5,
     "TwoPointers": 1,
     "ThreePointers": 0,
     "Position": 5
+  },
+  {
+    "Name": "Dan",
+    "First": "",
+    "Second": "",
+    "Third": "",
+    "Points": 3,
+    "OnePointers": 3,
+    "TwoPointers": 0,
+    "ThreePointers": 0,
+    "Position": 1
   }
 ]

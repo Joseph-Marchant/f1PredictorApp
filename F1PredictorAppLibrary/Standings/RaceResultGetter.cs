@@ -18,7 +18,7 @@ public class RaceResultGetter : IRaceResultGetter
         var result = this.GetDrivers();
         var fullRace = this.FullRace();
         var fastestLap = this.FastestLap(fullRace);
-        this.standingsUpdater.UpdateStandings(entrants, result, fastestLap, fullRace);
+        if (fullRace) this.standingsUpdater.UpdateStandings(entrants, result, fastestLap, fullRace);
         return result;
     }
 
@@ -84,7 +84,6 @@ public class RaceResultGetter : IRaceResultGetter
         {
             if (!this.driverList.Contains(driver)) throw new ArgumentException("Driver was not found");
         }
-
         return driversAsList;
     }
 }

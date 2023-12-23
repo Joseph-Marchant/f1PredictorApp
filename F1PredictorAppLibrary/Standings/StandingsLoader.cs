@@ -37,9 +37,12 @@ public class StandingsLoader : IStandingsLoader
     public void AddDriver(string newDriver)
     {
         var entrants = this.GetStandings();
-        var newEntrant = new Entrant(newDriver, 0, entrants.Count + 1, this.BlankPositionData());
-        entrants.Add(newEntrant);
-        this.SaveStandings(entrants);
+        if (entrants.Where(e => e.Driver == newDriver).ToArray().Length == 0)
+        {
+            var newEntrant = new Entrant(newDriver, 0, entrants.Count + 1, this.BlankPositionData());
+            entrants.Add(newEntrant);
+            this.SaveStandings(entrants);
+        }
     }
 
     private List<PositionData> BlankPositionData()

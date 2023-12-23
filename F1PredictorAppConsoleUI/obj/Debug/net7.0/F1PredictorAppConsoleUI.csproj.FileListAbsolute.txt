@@ -46,4 +46,3 @@ C:\Users\jwf_m\Documents\Code\F1PredictorApp\F1PredictorAppConsoleUI\obj\Debug\n
 C:\Users\jwf_m\Documents\Code\F1PredictorApp\F1PredictorAppConsoleUI\obj\Debug\net7.0\F1PredictorAppConsoleUI.pdb
 C:\Users\jwf_m\Documents\Code\F1PredictorApp\F1PredictorAppConsoleUI\obj\Debug\net7.0\F1PredictorAppConsoleUI.genruntimeconfig.cache
 C:\Users\jwf_m\Documents\Code\F1PredictorApp\F1PredictorAppConsoleUI\obj\Debug\net7.0\ref\F1PredictorAppConsoleUI.dll
-C:\Users\jwf_m\Documents\Code\F1PredictorApp\F1PredictorAppConsoleUI\bin\Debug\net7.0\System.Diagnostics.DiagnosticSource.dll
