@@ -8,4 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = F1PredictorAppLibrary
-build_property.ProjectDir = C:\Users\jwf_m\Documents\Code\F1PredictorApp\F1PredictorAppLibrary\
+build_property.ProjectDir = C:\Users\Joe Marchant\Documents\Code\F1Predictor\F1PredictorAppLibrary\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
