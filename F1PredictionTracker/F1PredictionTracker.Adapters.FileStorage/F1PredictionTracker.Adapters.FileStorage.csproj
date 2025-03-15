@@ -15,4 +15,16 @@
       <ProjectReference Include="..\F1PredictionTracker.Ports\F1PredictionTracker.Ports.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Update="StoredFiles\predictions.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="StoredFiles\predictionsStandings.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="StoredFiles\state.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>
