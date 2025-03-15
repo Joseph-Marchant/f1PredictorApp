@@ -8,23 +8,24 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Joe Marchant\\.nuget\\packages\\": {},
+    "C:\\Users\\jwf_m\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Joe Marchant\\Documents\\Code\\F1Predictor\\F1PredictorApp\\Models\\F1PredictorApp.Models.csproj",
+      "projectUniqueName": "C:\\Users\\jwf_m\\Documents\\Code\\F1PredictorApp\\F1PredictorApp\\Models\\F1PredictorApp.Models.csproj",
       "projectName": "F1PredictorApp.Models",
-      "projectPath": "C:\\Users\\Joe Marchant\\Documents\\Code\\F1Predictor\\F1PredictorApp\\Models\\F1PredictorApp.Models.csproj",
-      "packagesPath": "C:\\Users\\Joe Marchant\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Joe Marchant\\Documents\\Code\\F1Predictor\\F1PredictorApp\\Models\\obj\\",
+      "projectPath": "C:\\Users\\jwf_m\\Documents\\Code\\F1PredictorApp\\F1PredictorApp\\Models\\F1PredictorApp.Models.csproj",
+      "packagesPath": "C:\\Users\\jwf_m\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jwf_m\\Documents\\Code\\F1PredictorApp\\F1PredictorApp\\Models\\obj\\",
       "projectStyle": "PackageReference",
+      "UsingMicrosoftNETSdk": false,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Joe Marchant\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jwf_m\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -33,7 +34,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -67,7 +67,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

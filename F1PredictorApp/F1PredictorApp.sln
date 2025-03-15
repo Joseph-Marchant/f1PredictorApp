@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "F1PredictorApp.Services", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "F1PredictorApp.Models", "Models\F1PredictorApp.Models.csproj", "{A7DDED36-0026-4287-AD31-153A17BB4F82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F1PredictorApp.Adapters", "F1PredictorApp.Adapters\F1PredictorApp.Adapters.csproj", "{800A6CE1-1889-446B-9FC2-C39D070471AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "F1PredictorApp.Adapters", "F1PredictorApp.Adapters\F1PredictorApp.Adapters.csproj", "{800A6CE1-1889-446B-9FC2-C39D070471AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F1PredictorApp.Functions", "F1PredictorApp.Functions\F1PredictorApp.Functions.csproj", "{F0C05C3B-1971-4615-97F1-361E0E856B18}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{800A6CE1-1889-446B-9FC2-C39D070471AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{800A6CE1-1889-446B-9FC2-C39D070471AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{800A6CE1-1889-446B-9FC2-C39D070471AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0C05C3B-1971-4615-97F1-361E0E856B18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0C05C3B-1971-4615-97F1-361E0E856B18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0C05C3B-1971-4615-97F1-361E0E856B18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0C05C3B-1971-4615-97F1-361E0E856B18}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

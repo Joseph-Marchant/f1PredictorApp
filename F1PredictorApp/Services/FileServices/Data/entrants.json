@@ -1,0 +1,50 @@
+[
+  {
+    "Name": "AI",
+    "Predictions": [],
+    "Score": 0,
+    "Position": 1
+  },
+  {
+    "Name": "Smart AI",
+    "Predictions": [],
+    "Score": 0,
+    "Position": 2
+  },
+  {
+    "Name": "Joe",
+    "Predictions": [],
+    "Score": 0,
+    "Position": 3
+  },
+  {
+    "Name": "Dan",
+    "Predictions": [],
+    "Score": 0,
+    "Position":4
+  },
+  {
+    "Name": "Will",
+    "Predictions": [],
+    "Score": 0,
+    "Position": 5
+  },
+  {
+    "Name": "Yoda",
+    "Predictions": [],
+    "Score": 0,
+    "Position": 6
+  },
+  {
+    "Name": "Smiffy",
+    "Predictions": [],
+    "Score": 0,
+    "Position": 7
+  },
+  {
+    "Name": "Ryan",
+    "Predictions": [],
+    "Score": 0,
+    "Position": 8
+  }
+]

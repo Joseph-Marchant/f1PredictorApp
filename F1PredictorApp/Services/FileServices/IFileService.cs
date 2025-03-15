@@ -1,7 +1,7 @@
 ﻿namespace F1PredictorApp.Services.FileServices;
 
-public interface IFileService<TServiceType>
+public interface IFileService<TDataType>
 {
-    public List<TServiceType> LoadData();
-    public void SaveData(List<TServiceType> saveData);
+    public List<TDataType> LoadData();
+    public void SaveData(List<TDataType> saveData);
 }

@@ -1,22 +1,11 @@
 [
   {
-    "Name": "Will",
-    "First": "",
-    "Second": "",
-    "Third": "",
-    "Points": 6,
-    "OnePointers": 6,
-    "TwoPointers": 0,
-    "ThreePointers": 0,
-    "Position": 5
-  },
-  {
     "Name": "Yoda",
     "First": "",
     "Second": "",
     "Third": "",
-    "Points": 8,
-    "OnePointers": 6,
+    "Points": 4,
+    "OnePointers": 2,
     "TwoPointers": 1,
     "ThreePointers": 0,
     "Position": 1
@@ -37,19 +26,63 @@
     "First": "",
     "Second": "",
     "Third": "",
-    "Points": 14,
-    "OnePointers": 6,
-    "TwoPointers": 4,
+    "Points": 15,
+    "OnePointers": 9,
+    "TwoPointers": 3,
     "ThreePointers": 0,
     "Position": 1
+  },
+  {
+    "Name": "Dan",
+    "First": "",
+    "Second": "",
+    "Third": "",
+    "Points": 12,
+    "OnePointers": 8,
+    "TwoPointers": 2,
+    "ThreePointers": 0,
+    "Position": 1
+  },
+  {
+    "Name": "Ryan",
+    "First": "",
+    "Second": "",
+    "Third": "",
+    "Points": 3,
+    "OnePointers": 1,
+    "TwoPointers": 1,
+    "ThreePointers": 0,
+    "Position": 5
+  },
+  {
+    "Name": "Stew",
+    "First": "",
+    "Second": "",
+    "Third": "",
+    "Points": 2,
+    "OnePointers": 0,
+    "TwoPointers": 1,
+    "ThreePointers": 0,
+    "Position": 9
+  },
+  {
+    "Name": "Will",
+    "First": "",
+    "Second": "",
+    "Third": "",
+    "Points": 13,
+    "OnePointers": 6,
+    "TwoPointers": 2,
+    "ThreePointers": 1,
+    "Position": 5
   },
   {
     "Name": "AI",
     "First": "",
     "Second": "",
     "Third": "",
-    "Points": 3,
-    "OnePointers": 3,
+    "Points": 6,
+    "OnePointers": 6,
     "TwoPointers": 0,
     "ThreePointers": 0,
     "Position": 4
@@ -59,21 +92,10 @@
     "First": "",
     "Second": "",
     "Third": "",
-    "Points": 7,
-    "OnePointers": 5,
-    "TwoPointers": 1,
-    "ThreePointers": 0,
-    "Position": 5
-  },
-  {
-    "Name": "Dan",
-    "First": "",
-    "Second": "",
-    "Third": "",
-    "Points": 3,
-    "OnePointers": 3,
+    "Points": 6,
+    "OnePointers": 6,
     "TwoPointers": 0,
     "ThreePointers": 0,
-    "Position": 1
+    "Position": 5
   }
 ]

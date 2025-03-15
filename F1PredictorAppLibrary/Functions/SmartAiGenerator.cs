@@ -36,11 +36,10 @@ public class SmartAiGenerator : ISmartAiGenerator
 
         var confirmationMessage =
             updatedAIPrediction.Name +
-            "'s Prediction of " +
+            " has predicted " +
             updatedAIPrediction.First +
             updatedAIPrediction.Second +
-            updatedAIPrediction.Third +
-            " has been saved";
+            updatedAIPrediction.Third;
 
         return confirmationMessage;
     }

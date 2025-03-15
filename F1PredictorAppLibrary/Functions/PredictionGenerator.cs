@@ -32,15 +32,14 @@ public class PredictionGenerator : IPredictionGenerator
         predictions.Remove(AIPredictionFromList);
         predictions.Add(updatedAIPrediction);
 
-        
+
 
         var confirmationMessage =
             updatedAIPrediction.Name +
-            "'s Prediction of " +
+            " has predicted " +
             updatedAIPrediction.First +
             updatedAIPrediction.Second +
-            updatedAIPrediction.Third +
-            " has been saved";
+            updatedAIPrediction.Third;
 
         return confirmationMessage;
     }

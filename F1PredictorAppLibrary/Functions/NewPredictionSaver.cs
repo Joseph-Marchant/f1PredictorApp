@@ -28,6 +28,6 @@ public class NewPredictionSaver : INewPredictionSaver
         prediction.Second = newPrediction.Second;
         prediction.Third = newPrediction.Third;
 
-        return $"{prediction.Name}'s prediction of {prediction.First}{prediction.Second}{prediction.Third} has been saved";
+        return $"{prediction.Name} has predicted {prediction.First}{prediction.Second}{prediction.Third}";
     }
 }

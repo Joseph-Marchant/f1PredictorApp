@@ -1,29 +1,52 @@
-﻿namespace F1PredictorApp.Services;
+﻿using F1PredictorApp.Models;
 
-public class ScoringService(List<string> predictedDrivers, List<string> podiumDrivers)
+namespace F1PredictorApp.Services;
+
+public class ScoringService() : IScoringService
 {
-    // 1 point per correctly guessed driver
-    // n point(s) for n dirvers in correct position (cumulative)
-    // 1 point for predicted driver getting fastest lap
-    // n point(s) for predicted driver finishing 4+n positions ahead of starting
-    // -1 point if predicted driver does not see the chequred flag
-    // -1 point if predicted driver is not a classified finisher
-    // -1 point if driver is in bottom 3
-    // -n point(s) for n drivers in bottom three reverse position (cumulative)
+    private List<Driver>? predictedDrivers;
+    private List<Driver>? result;
+    private List<Driver>? startingGrid;
+    private Driver? fastestLap;
 
-    private List<string> predictedDrivers { get; set; }
-    private List<string> podiumDrivers { get; set; }
-    private int CorrectDrivers()
+    public int GetScore(List<Driver> predictedDrivers, List<Driver> result, List<Driver> startingGrid, Driver? fastestLap)
     {
-        return this.predictedDrivers.Where(d => this.podiumDrivers.Contains(d)).Count();
+        this.predictedDrivers = predictedDrivers;
+        this.result = result;
+        this.startingGrid = startingGrid;
+        this.fastestLap = fastestLap;
+
+        var score = this.CorrectDrivers(this.result.Take(3).ToList())
+            + this.CorrectDriverPosition(this.result.Take(3).ToList())
+            + this.DriversAchievedMoreThanFourPositions()
+            + this.DriverDidNotFinish()
+            + this.DriverNotClassified()
+            + this.ReversePodium();
+
+        if (fastestLap != null)
+        {
+            score += this.FastestLapInPrediction(this.fastestLap);
+        }
+
+        this.predictedDrivers = null;
+        this.result = null;
+        this.startingGrid = null;
+        this.fastestLap = null;
+        return score;
     }
 
-    private int CorrectDriverPosition()
+    private int CorrectDrivers(List<Driver> podiumDrivers)
+    {
+        var podiumNames = podiumDrivers.Select(x => x.Name).ToList();
+        return this.predictedDrivers!.Where(x => podiumNames.Contains(x.Name)).Count();
+    }
+
+    private int CorrectDriverPosition(List<Driver> podiumDrivers)
     {
         var correctCount = 0;
-        for (var i = 0; i < this.predictedDrivers.Count; i++)
+        for (var i = 0; i < this.predictedDrivers!.Count; i++)
         {
-            if (this.predictedDrivers[i] == this.podiumDrivers[i]) correctCount++;
+            if (this.predictedDrivers[i].Name == podiumDrivers[i].Name) correctCount++;
         }
 
         return correctCount switch
@@ -35,13 +58,38 @@ public class ScoringService(List<string> predictedDrivers, List<string> podiumDr
         };
     }
 
-    private int FastestLapInPrediction(string fastestLap)
+    private int FastestLapInPrediction(Driver? fastestLap)
     {
-        return this.predictedDrivers.Contains(fastestLap) ? 1 : 0;
+        return this.predictedDrivers!.Where(x => x.Name == fastestLap!.Name).Count();
     }
 
     private int DriversAchievedMoreThanFourPositions()
     {
+        var score = 0;
+        foreach (var driver in this.predictedDrivers!)
+        {
+            var startingPosition = this.startingGrid!.FindIndex(x => x.Name == driver.Name);
+            var actualPosition = this.result!.FindIndex(x => x.Name == driver.Name);
+            var diff = actualPosition - startingPosition;
+            score += diff >= 5 ? diff - 5 : 0;
+        }
+
+        return score;
+    }
+
+    private int DriverDidNotFinish()
+    {
         return 0;
+    }
+
+    private int DriverNotClassified()
+    {
+        return 0;
+    }
+
+    private int ReversePodium()
+    {
+        var reversePodium = this.result!.Skip(17).Take(3).Reverse().ToList();
+        return (this.CorrectDrivers(reversePodium) + this.CorrectDriverPosition(reversePodium)) * -1;
     }
 }

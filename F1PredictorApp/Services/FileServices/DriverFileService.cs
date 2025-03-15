@@ -1,44 +1,35 @@
-﻿using F1PredictorApp.Models;
+﻿namespace F1PredictorApp.Services.FileServices;
+
+using F1PredictorApp.Models;
 using Newtonsoft.Json;
 using System.Reflection;
 
-namespace F1PredictorApp.Services.FileServices;
-
 public class DriverFileService : IFileService<Driver>
 {
+    private string filePath;
+
+    public DriverFileService()
+    {
+        var assembly = Assembly.GetExecutingAssembly().Location;
+        this.filePath = Path.Combine(assembly, "FileService", "Data", "drivers.json");
+    }
+
     public List<Driver> LoadData()
     {
-        var teams = this.LoadTeams();
+        using var file = File.OpenRead(this.filePath);
+        using var reader = new StreamReader(file);
+        var json = reader.ReadToEnd();
+        if (json == null) throw new FileLoadException("JSON failed to read drivers");
 
-        List<Driver> drivers = new List<Driver>();
-        foreach (var team in teams)
-        {
-            
-        }
+        var drivers = JsonConvert.DeserializeObject<List<Driver>>(json);
+        if (drivers == null) throw new FileLoadException("JSON failed to deserialise drivers");
 
         return drivers;
     }
 
     public void SaveData(List<Driver> saveData)
     {
-
-    }
-
-    private List<Team> LoadTeams()
-    {
-        var assembly = Assembly.GetExecutingAssembly().Location;
-        var path = Path.Combine(assembly, "FileService", "Data", "drivers.json");
-        using (var r = new StreamReader(path))
-        {
-            var json = r.ReadToEnd();
-            if (json == null) throw new FileLoadException("JSON failed to read drivers");
-
-            List<Team>? drivers = JsonConvert.DeserializeObject<List<Team>>(json);
-            if (drivers == null) throw new FileLoadException("JSON failed to deserialise drivers");
-
-            return drivers;
-        }
-
-        throw new FileLoadException("Could not load predictions");
+        var json = JsonConvert.SerializeObject(saveData, Formatting.Indented);
+        File.WriteAllText(filePath, json);
     }
 }

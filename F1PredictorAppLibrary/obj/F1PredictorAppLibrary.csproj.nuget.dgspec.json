@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Joe Marchant\\Documents\\Code\\F1Predictor\\F1PredictorAppLibrary\\F1PredictorAppLibrary.csproj": {}
+    "C:\\Users\\jwf_m\\Documents\\Code\\F1PredictorApp\\F1PredictorAppLibrary\\F1PredictorAppLibrary.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Joe Marchant\\Documents\\Code\\F1Predictor\\F1PredictorAppLibrary\\F1PredictorAppLibrary.csproj": {
+    "C:\\Users\\jwf_m\\Documents\\Code\\F1PredictorApp\\F1PredictorAppLibrary\\F1PredictorAppLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Joe Marchant\\Documents\\Code\\F1Predictor\\F1PredictorAppLibrary\\F1PredictorAppLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\jwf_m\\Documents\\Code\\F1PredictorApp\\F1PredictorAppLibrary\\F1PredictorAppLibrary.csproj",
         "projectName": "F1PredictorAppLibrary",
-        "projectPath": "C:\\Users\\Joe Marchant\\Documents\\Code\\F1Predictor\\F1PredictorAppLibrary\\F1PredictorAppLibrary.csproj",
-        "packagesPath": "C:\\Users\\Joe Marchant\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Joe Marchant\\Documents\\Code\\F1Predictor\\F1PredictorAppLibrary\\obj\\",
+        "projectPath": "C:\\Users\\jwf_m\\Documents\\Code\\F1PredictorApp\\F1PredictorAppLibrary\\F1PredictorAppLibrary.csproj",
+        "packagesPath": "C:\\Users\\jwf_m\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jwf_m\\Documents\\Code\\F1PredictorApp\\F1PredictorAppLibrary\\obj\\",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Joe Marchant\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jwf_m\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +27,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -70,7 +70,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
