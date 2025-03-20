@@ -18,11 +18,11 @@ public class PredictionScoringService(
         var raceResult = await getRaceResult.GetRaceResultAsync(state.Year, state.CurrentRound);
         var predictions = retrievePredictions.GetPredictions();
         var predictionsStandings = retrievePredictionStandings.GetPredictionStandings();
-        var responses = new List<string>();
+        var responses = new List<string> {$"F1 Prediction Results {state.Year}-{state.CurrentRound}:"};
         foreach (var prediction in predictions)
         {
             var predictionScore = this.ScorePrediction(prediction, raceResult.Podium);
-            var user = predictionsStandings.Users.FirstOrDefault(u => u.Name == prediction.Name) ?? new User(prediction.Name);
+            var user = this.GetUser(predictionsStandings, prediction.Name);
             user.Score += predictionScore;
             var pointOrPoints = predictionScore == 1 ? "point" : "points";
             responses.Add($"{user.Name} scored {predictionScore} {pointOrPoints}.");
@@ -35,6 +35,18 @@ public class PredictionScoringService(
         predictionsStandings.Round = state.CurrentRound;
         storePredictionStandings.StorePredictionStandings(predictionsStandings);
         return string.Join("\n", responses);
+    }
+
+    private User GetUser(PredictionStandings predictionStandings, string userName)
+    {
+        var storedUser = predictionStandings.Users.FirstOrDefault(u => u.Name == userName);
+        if (storedUser == null)
+        {
+            storedUser = new User(userName);
+            predictionStandings.Users.Add(storedUser);
+        }
+            
+        return storedUser;
     }
 
     private int ScorePrediction(Prediction prediction, List<string> raceResults)

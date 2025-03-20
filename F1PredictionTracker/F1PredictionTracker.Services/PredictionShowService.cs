@@ -9,7 +9,7 @@ public class PredictionShowService(
     public async Task<string> ShowPredictionScoresAsync()
     {
         var standings = retrievePredictionStandings.GetPredictionStandings();
-        standings.Users.Sort((p1, p2) => p1.Score.CompareTo(p2.Score));
+        standings.Users.Sort((p1, p2) => p2.Score.CompareTo(p1.Score));
         var sb = new StringBuilder();
         var position = 1;
         for (var i = 0; i < standings.Users.Count; i++)
@@ -22,7 +22,7 @@ public class PredictionShowService(
             }
             
             i += users.Count() - 1;
-            position = i + 1;
+            position += users.Count();
         }
         
         return sb.ToString();

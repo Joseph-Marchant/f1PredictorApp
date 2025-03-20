@@ -12,7 +12,7 @@ public class FileStorageConfig
 
     private string GetFilePath(string fileName)
     {
-        var directory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? throw new NullReferenceException("Unable to get executing assembly location");
-        return Path.Combine(directory, "StoredFiles", fileName);
+        var solutionDir = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\.."));
+        return Path.Combine(solutionDir, "F1PredictionTracker.Adapters.FileStorage", "StoredFiles", fileName);
     }
 }
