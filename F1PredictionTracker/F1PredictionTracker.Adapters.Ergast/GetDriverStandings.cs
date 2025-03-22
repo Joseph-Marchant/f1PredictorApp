@@ -23,12 +23,12 @@ public class GetDriverStandings : IGetDriverStandings
         var reader = new StreamReader(bodyStream);
         var responseJson = await reader.ReadToEndAsync();
         var standings = JsonConvert.DeserializeObject<MRDataResponse>(responseJson);
-        var drivers = this.GetPodiumResult(standings, round);
+        var drivers = this.GetStandings(standings, round);
         
         return drivers;
     }
 
-    private List<string> GetPodiumResult(MRDataResponse? standings, int round)
+    private List<string> GetStandings(MRDataResponse? standings, int round)
     {
         var driversInOrder = new List<string>();
         ArgumentNullException.ThrowIfNull(standings);
@@ -48,17 +48,6 @@ public class GetDriverStandings : IGetDriverStandings
         
         var driversStandings = standingsList.DriverStandings;
         ArgumentNullException.ThrowIfNull(driversStandings);
-        for (var i = 0; i < driversStandings.Length; i++)
-        {
-            var driver = driversStandings.Where(driver => driver.position == i.ToString()).Select(driver => driver.Driver.code).FirstOrDefault();
-            if (string.IsNullOrEmpty(driver))
-            {
-                throw new ArgumentNullException($"Cannot find standing for P{i}");
-            }
-
-            driversInOrder.Add(driver);
-        }
-        
-        return driversInOrder;
+        return driversStandings.Select(driver => driver.Driver.code).ToList();
     }
 }
