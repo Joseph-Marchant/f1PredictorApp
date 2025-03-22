@@ -11,7 +11,7 @@
     "Round": 2,
     "First": "NOR",
     "Second": "LEC",
-    "Third": null
+    "Third": "VER"
   },
   {
     "Name": "Random AI",
@@ -26,5 +26,33 @@
     "First": "PIA",
     "Second": "VER",
     "Third": "ALB"
+  },
+  {
+    "Name": "Will",
+    "Round": 2,
+    "First": "HAM",
+    "Second": "PIA",
+    "Third": "RUS"
+  },
+  {
+    "Name": "Dan",
+    "Round": 2,
+    "First": "HAM",
+    "Second": "PIA",
+    "Third": "LEC"
+  },
+  {
+    "Name": "Yoda",
+    "Round": 2,
+    "First": "PIA",
+    "Second": "HAM",
+    "Third": "NOR"
+  },
+  {
+    "Name": "Ryan",
+    "Round": 2,
+    "First": "NOR",
+    "Second": "PIA",
+    "Third": "RUS"
   }
 ]

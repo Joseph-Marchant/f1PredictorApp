@@ -5,7 +5,7 @@ namespace F1PredictionTracker.Hosts.Console;
 using System;
 
 public class ConsoleUi(
-    PredictionGetService predictionGetService,
+    BuildUserPredictionService buildUserPredictionService,
     PredictionGenerationService predictionGenerationService,
     PredictionScoringService predictionScoringService,
     PredictionShowService predictionShowService)
@@ -52,7 +52,7 @@ public class ConsoleUi(
     {
         return function switch
         {
-            1 => await predictionGetService.GetPredictionAsync(),
+            1 => await buildUserPredictionService.BuildPredictionAsync(),
             2 => await predictionGenerationService.GeneratePredictionsAsync(),
             3 => await predictionScoringService.ScorePredictions(),
             4 => await predictionShowService.ShowPredictionScoresAsync(),

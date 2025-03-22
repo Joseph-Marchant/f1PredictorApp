@@ -15,7 +15,7 @@ public class SmartAiGenerationService(
         var currentDrivers = await getDrivers.GetDriversAsync(state.Year, state.CurrentRound);
         var drivers = this.GetWeightedDriversList(driversStandings, currentDrivers);
         var randomPrediction = this.GetRandomPrediction(drivers);
-        var response = await storePredictionService.StorePredictionAsync("Smart AI", randomPrediction, false);
+        var response = storePredictionService.StorePrediction("Smart AI", randomPrediction);
         return response;
     }
 

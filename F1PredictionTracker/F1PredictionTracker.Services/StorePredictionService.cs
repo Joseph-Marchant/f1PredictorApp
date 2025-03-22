@@ -10,7 +10,7 @@ public class StorePredictionService(
     IRetrievePredictionStandings retrievePredictionStandings)
 {
 
-    public async Task<string> StorePredictionAsync(string userName, List<string> prediction, bool errorOnNewUser)
+    public string StorePrediction(string userName, List<string> prediction)
     {
         if (prediction.Count != 3)
         {
@@ -18,18 +18,7 @@ public class StorePredictionService(
         }
         
         var standings = retrievePredictionStandings.GetPredictionStandings();
-        var userEntry = standings.Users.Where(s => s.Name == userName);
-        if (userEntry.Count() > 1)
-        {
-            throw new ArgumentException("Duplicate users exist");
-        }
-
-        if (userEntry.Count() == 0 && errorOnNewUser)
-        {
-            throw new ArgumentException("No user found");
-        }
-
-        var user = userEntry.Count() == 0 ? new User(userName) : userEntry.First();
+        var user = standings.Users.FirstOrDefault(s => s.Name == userName) ?? new User(userName);
         var state = retrieveState.GetState();
         var predictions = retrievePredictions.GetPredictions();
         if (predictions.FirstOrDefault(p => p.Round == state.CurrentRound && p.Name == user.Name) != null)
