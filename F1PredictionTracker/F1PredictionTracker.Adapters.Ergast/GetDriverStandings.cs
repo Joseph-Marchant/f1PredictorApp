@@ -32,22 +32,19 @@ public class GetDriverStandings : IGetDriverStandings
     {
         var driversInOrder = new List<string>();
         ArgumentNullException.ThrowIfNull(standings);
-        var standingsTable = standings.MRData.StandingsTable;
-        ArgumentNullException.ThrowIfNull(standingsTable);
-        var standingsList = standingsTable.StandingsLists.FirstOrDefault();
-        if (standingsList == null && standingsTable.round == null)
+        var standingsTable = standings.MRData.StandingsTable ?? throw new  NullReferenceException("Standings table not found.");
+        var standingsList = standingsTable.StandingsLists.FirstOrDefault() ??  throw new  NullReferenceException("Standings list not found.");
+        if (string.IsNullOrEmpty(standingsTable.round))
         {
             return driversInOrder;
         }
 
-        ArgumentNullException.ThrowIfNull(standingsList);
         if (standingsList.round != round.ToString())
         {
             throw new InvalidOperationException("Standings table does not match round");
         }
         
-        var driversStandings = standingsList.DriverStandings;
-        ArgumentNullException.ThrowIfNull(driversStandings);
+        var driversStandings = standingsList.DriverStandings ??  throw new  NullReferenceException("Drivers standings not found.");
         return driversStandings.Select(driver => driver.Driver.code).ToList();
     }
 }

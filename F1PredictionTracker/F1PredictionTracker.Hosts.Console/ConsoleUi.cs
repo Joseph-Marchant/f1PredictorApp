@@ -16,13 +16,21 @@ public class ConsoleUi(
         while (true)
         {
             var function = this.GetFunction();
-            var resposne = await this.PerformFunction(function);
-            if (resposne == QuitCommand)
+            var response = string.Empty;
+            try
             {
-                break;
+                response = await this.PerformFunction(function);
+                if (response == QuitCommand)
+                {
+                    break;
+                }
             }
-
-            Console.WriteLine(resposne);
+            catch (Exception ex)
+            {
+                response = $"Error: {ex.Message}";
+            }
+            
+            Console.WriteLine(response);
         }
     }
 

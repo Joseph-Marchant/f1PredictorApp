@@ -31,15 +31,13 @@ public class GetDrivers : IGetDrivers
     private List<string> GetDriverCodes(MRDataResponse? driversResponse, int round)
     {
         ArgumentNullException.ThrowIfNull(driversResponse);
-        var driversTable = driversResponse.MRData.DriverTable;
-        ArgumentNullException.ThrowIfNull(driversTable);
+        var driversTable = driversResponse.MRData.DriverTable ?? throw new  NullReferenceException("Drivers table not found.");
         if (driversTable.round != round.ToString())
         {
             throw new InvalidDataException("Divers list doesn't match round");
         }
         
-        var drivers = driversTable.drivers;
-        ArgumentNullException.ThrowIfNull(drivers);
+        var drivers = driversTable.drivers ??  throw new  NullReferenceException("Drivers not found.");
         var driverCodes = drivers.Select(driver => driver.code);
         
         return driverCodes.ToList();

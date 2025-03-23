@@ -31,16 +31,11 @@ public class GetRaceResult : IGetRaceResult
     private List<string> GetPodiumResult(MRDataResponse? raceResult, int round)
     {
         ArgumentNullException.ThrowIfNull(raceResult);
-        var raceTable = raceResult.MRData.RaceTable;
-        ArgumentNullException.ThrowIfNull(raceTable);
-        var raceResults = raceTable.Races.FirstOrDefault(race => race.round == round.ToString());
-        ArgumentNullException.ThrowIfNull(raceResults);
-        var first = raceResults.Results.FirstOrDefault(result => result.position == "1");
-        ArgumentNullException.ThrowIfNull(first);
-        var second = raceResults.Results.FirstOrDefault(result => result.position == "2");
-        ArgumentNullException.ThrowIfNull(second);
-        var third = raceResults.Results.FirstOrDefault(result => result.position == "3");
-        ArgumentNullException.ThrowIfNull(third);
+        var raceTable = raceResult.MRData.RaceTable ?? throw new NullReferenceException("Race table could not be found.");
+        var raceResults = raceTable.Races.FirstOrDefault(race => race.round == round.ToString()) ?? throw new NullReferenceException("Race results could not be found.");
+        var first = raceResults.Results.FirstOrDefault(result => result.position == "1") ?? throw new NullReferenceException("1st place driver could not be found.");
+        var second = raceResults.Results.FirstOrDefault(result => result.position == "2") ?? throw new NullReferenceException("2nd place driver could not be found.");
+        var third = raceResults.Results.FirstOrDefault(result => result.position == "3") ??  throw new NullReferenceException("3rd place driver could not be found.");
         
         return [first.Driver.code, second.Driver.code, third.Driver.code];
     }
