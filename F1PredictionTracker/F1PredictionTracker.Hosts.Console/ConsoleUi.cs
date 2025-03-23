@@ -41,13 +41,14 @@ public class ConsoleUi(
             "2: Generate AI Predictions\n" +
             "3: Score Prediction\n" +
             "4: Show Scores\n" +
-            "5: Quit\n" +
+            "5: Score Predictions and Show Scores\n" + 
+            "6: Quit\n" +
             "Function: ";
         Console.Write(inputMessage);
         var inputAsString = Console.ReadLine();
         var inputIsInt = int.TryParse(inputAsString, out var response);
 
-        if (!inputIsInt || response < 1 || response > 5)
+        if (!inputIsInt || response < 1 || response > 6)
         {
             Console.WriteLine("Must choose between 1 and 5");
             return this.GetFunction();
@@ -58,14 +59,34 @@ public class ConsoleUi(
     
     private async Task<string> PerformFunction(int function)
     {
-        return function switch
+        var response = string.Empty;
+        switch(function)
         {
-            1 => await buildUserPredictionService.BuildPredictionAsync(),
-            2 => await predictionGenerationService.GeneratePredictionsAsync(),
-            3 => await predictionScoringService.ScorePredictions(),
-            4 => await predictionShowService.ShowPredictionScoresAsync(),
-            5 => QuitCommand,
-            _ => "Invalid Input"
-        };
+            case 1:
+                response = await buildUserPredictionService.BuildPredictionAsync();
+                break;
+            case 2:
+                response = await predictionGenerationService.GeneratePredictionsAsync();
+                break;
+            case 3:
+                response = await predictionScoringService.ScorePredictions();
+                break;
+            case 4:
+                response = await predictionShowService.ShowPredictionScoresAsync();
+                break;
+            case 5:
+                var scoreResponse = await predictionScoringService.ScorePredictions();
+                var showResponse = await predictionShowService.ShowPredictionScoresAsync();
+                response = $"{scoreResponse}\n\n{showResponse}";
+                break;
+            case 6:
+                response = QuitCommand;
+                break;
+            default:
+                response = "Invalid Input";
+                break;
+        }
+        
+        return response;
     }
 }
