@@ -16,18 +16,13 @@ public class PredictionValidationService(
 
     public async Task<bool> ValidatePrediction(List<string> prediciton)
     {
-        if (prediciton.Count == 3)
+        if (prediciton.Count != 3)
         {
             return false;
         }
 
-        foreach (var driver in prediciton)
-        {
-            var state = retrieveState.GetState();
-            var drivers = await getDrivers.GetDriversAsync(state.Year, state.CurrentRound);
-            if (!drivers.Contains(driver.ToUpper())) return false;
-        }
-
-        return true;
+        var state = retrieveState.GetState();
+        var drivers = await getDrivers.GetDriversAsync(state.Year, state.CurrentRound);
+        return prediciton.All(driver => drivers.Contains(driver.ToUpper()));
     }
 }

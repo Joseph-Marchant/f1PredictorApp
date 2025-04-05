@@ -38,6 +38,11 @@ public class GetDrivers : IGetDrivers
         }
         
         var drivers = driversTable.drivers ??  throw new  NullReferenceException("Drivers not found.");
+        if (drivers.Length == 0)
+        {
+            throw new InvalidDataException($"No drivers found from API for round: {round}");
+        }
+        
         var driverCodes = drivers.Select(driver => driver.code);
         
         return driverCodes.ToList();
