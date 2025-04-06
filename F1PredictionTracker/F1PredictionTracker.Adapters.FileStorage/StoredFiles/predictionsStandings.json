@@ -1,5 +1,5 @@
 {
-  "Round": 3,
+  "Round": 4,
   "Users": [
     {
       "Name": "Random AI",
@@ -7,31 +7,31 @@
     },
     {
       "Name": "Smart AI",
-      "Score": 3
+      "Score": 6
     },
     {
       "Name": "Actual AI",
-      "Score": 3
+      "Score": 6
     },
     {
       "Name": "Joe",
-      "Score": 10
+      "Score": 11
     },
     {
       "Name": "Will",
-      "Score": 5
+      "Score": 9
     },
     {
       "Name": "Yoda",
-      "Score": 10
+      "Score": 13
     },
     {
       "Name": "Dan",
-      "Score": 1
+      "Score": 5
     },
     {
       "Name": "Ryan",
-      "Score": 8
+      "Score": 9
     }
   ]
 }

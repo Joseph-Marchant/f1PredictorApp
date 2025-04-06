@@ -55,8 +55,9 @@ public class SmartAiGenerationService(
         while (randomPredictions.Count < 3)
         {
             var randomIndex = random.Next(0, drivers.Count);
-            randomPredictions.Add(drivers[randomIndex]);
-            drivers.RemoveAt(randomIndex);
+            var driver = drivers[randomIndex];
+            randomPredictions.Add(driver);
+            drivers = drivers.Where(d => d != driver).ToList();
         }
 
         return randomPredictions;
