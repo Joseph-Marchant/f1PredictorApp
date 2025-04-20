@@ -4,6 +4,7 @@ public class RaceResultEventService(PredictionScoringService predictionScoringSe
 {
     public async Task<string> PollRaceResultAsync()
     {
+        // TODO: Add validation check to ensure round has not already been scored.
         var response = string.Empty;
         while (response == string.Empty)
         {
