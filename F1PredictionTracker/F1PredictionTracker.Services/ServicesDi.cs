@@ -17,6 +17,7 @@ public static class ServicesDi
         services.AddSingleton<PredictionShowService>();
         services.AddSingleton<PredictionGetService>();
         services.AddSingleton<UserGetService>();
+        services.AddSingleton<RaceResultEventService>();
         
         return services;
     }

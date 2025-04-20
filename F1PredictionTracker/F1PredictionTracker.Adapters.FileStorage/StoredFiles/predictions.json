@@ -1,1 +1,51 @@
-[]
+[
+  {
+    "Name": "Will",
+    "Round": 5,
+    "First": "PIA",
+    "Second": "LEC",
+    "Third": "ANT"
+  },
+  {
+    "Name": "Joe",
+    "Round": 5,
+    "First": "PIA",
+    "Second": "LEC",
+    "Third": "RUS"
+  },
+  {
+    "Name": "Dan",
+    "Round": 5,
+    "First": "PIA",
+    "Second": "RUS",
+    "Third": "LEC"
+  },
+  {
+    "Name": "Ryan",
+    "Round": 5,
+    "First": "PIA",
+    "Second": "RUS",
+    "Third": "NOR"
+  },
+  {
+    "Name": "Actual AI",
+    "Round": 5,
+    "First": "PIA",
+    "Second": "NOR",
+    "Third": "LEC"
+  },
+  {
+    "Name": "Random AI",
+    "Round": 5,
+    "First": "SAI",
+    "Second": "HAD",
+    "Third": "BOR"
+  },
+  {
+    "Name": "Smart AI",
+    "Round": 5,
+    "First": "NOR",
+    "Second": "VER",
+    "Third": "ANT"
+  }
+]

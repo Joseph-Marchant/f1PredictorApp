@@ -8,7 +8,8 @@ public class ConsoleUi(
     BuildUserPredictionService buildUserPredictionService,
     PredictionGenerationService predictionGenerationService,
     PredictionScoringService predictionScoringService,
-    PredictionShowService predictionShowService)
+    PredictionShowService predictionShowService,
+    RaceResultEventService raceResultEventService)
 {
     private const string QuitCommand = "quit";
     public async Task RunPredictionTrackerAsync()
@@ -36,12 +37,12 @@ public class ConsoleUi(
 
     private int GetFunction()
     {
-        var inputMessage = "Please choose a valid function from the following\n" +
+        const string inputMessage = "Please choose a valid function from the following\n" +
             "1: Save Prediction\n" +
             "2: Generate AI Predictions\n" +
-            "3: Score Prediction\n" +
-            "4: Show Scores\n" +
-            "5: Score Predictions and Show Scores\n" + 
+            "3: Show Scores\n" +
+            "4: Score Predictions and Show Scores\n" + 
+            "5: Score Predictions and Show Scores (Event Driven)\n" +
             "6: Quit\n" +
             "Function: ";
         Console.Write(inputMessage);
@@ -50,7 +51,7 @@ public class ConsoleUi(
 
         if (!inputIsInt || response < 1 || response > 6)
         {
-            Console.WriteLine("Must choose between 1 and 5");
+            Console.WriteLine("Must choose between 1 and 6");
             return this.GetFunction();
         }
 
@@ -69,15 +70,15 @@ public class ConsoleUi(
                 response = await predictionGenerationService.GeneratePredictionsAsync();
                 break;
             case 3:
-                response = await predictionScoringService.ScorePredictions();
-                break;
-            case 4:
                 response = await predictionShowService.ShowPredictionScoresAsync();
                 break;
-            case 5:
+            case 4:
                 var scoreResponse = await predictionScoringService.ScorePredictions();
                 var showResponse = await predictionShowService.ShowPredictionScoresAsync();
                 response = $"{scoreResponse}\n\n{showResponse}";
+                break;
+            case 5:
+                response = await raceResultEventService.PollRaceResultAsync();
                 break;
             case 6:
                 response = QuitCommand;
