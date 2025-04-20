@@ -31,6 +31,7 @@ public class GetDrivers : IGetDrivers
     private List<string> GetDriverCodes(MRDataResponse? driversResponse, int round)
     {
         ArgumentNullException.ThrowIfNull(driversResponse);
+        ArgumentNullException.ThrowIfNull(driversResponse.MRData);
         var driversTable = driversResponse.MRData.DriverTable ?? throw new  NullReferenceException("Drivers table not found.");
         if (driversTable.round != round.ToString())
         {
@@ -43,8 +44,6 @@ public class GetDrivers : IGetDrivers
             throw new InvalidDataException($"No drivers found from API for round: {round}");
         }
         
-        var driverCodes = drivers.Select(driver => driver.code);
-        
-        return driverCodes.ToList();
+        return drivers.Select(driver => driver.code ??  throw new  NullReferenceException("Driver code not found.")).ToList();
     }
 }

@@ -6,7 +6,7 @@ namespace F1PredictionTracker.Services;
 public class PredictionShowService(
     IRetrievePredictionStandings retrievePredictionStandings)
 {
-    public async Task<string> ShowPredictionScoresAsync()
+    public string ShowPredictionScores()
     {
         var standings = retrievePredictionStandings.GetPredictionStandings();
         standings.Users.Sort((p1, p2) => p2.Score.CompareTo(p1.Score));

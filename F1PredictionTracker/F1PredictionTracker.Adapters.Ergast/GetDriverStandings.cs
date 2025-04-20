@@ -32,7 +32,9 @@ public class GetDriverStandings : IGetDriverStandings
     {
         var driversInOrder = new List<string>();
         ArgumentNullException.ThrowIfNull(standings);
+        ArgumentNullException.ThrowIfNull(standings.MRData);
         var standingsTable = standings.MRData.StandingsTable ?? throw new  NullReferenceException("Standings table not found.");
+        ArgumentNullException.ThrowIfNull(standingsTable.StandingsLists);
         var standingsList = standingsTable.StandingsLists.FirstOrDefault() ??  throw new  NullReferenceException("Standings list not found.");
         if (string.IsNullOrEmpty(standingsTable.round))
         {
@@ -45,6 +47,11 @@ public class GetDriverStandings : IGetDriverStandings
         }
         
         var driversStandings = standingsList.DriverStandings ??  throw new  NullReferenceException("Drivers standings not found.");
-        return driversStandings.Select(driver => driver.Driver.code).ToList();
+        return driversStandings.Select(driver =>
+        {
+            ArgumentNullException.ThrowIfNull(driver.Driver);
+            ArgumentNullException.ThrowIfNull(driver.Driver.code);
+            return driver.Driver.code;
+        }).ToList();
     }
 }

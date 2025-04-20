@@ -70,11 +70,11 @@ public class ConsoleUi(
                 response = await predictionGenerationService.GeneratePredictionsAsync();
                 break;
             case 3:
-                response = await predictionShowService.ShowPredictionScoresAsync();
+                response = predictionShowService.ShowPredictionScores();
                 break;
             case 4:
                 var scoreResponse = await predictionScoringService.ScorePredictions();
-                var showResponse = await predictionShowService.ShowPredictionScoresAsync();
+                var showResponse = predictionShowService.ShowPredictionScores();
                 response = $"{scoreResponse}\n\n{showResponse}";
                 break;
             case 5:
