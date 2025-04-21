@@ -6,5 +6,5 @@ public class State
     
     public int CurrentRound { get; set; }
     
-    public string Year { get; set; }
+    public required string Year { get; set; }
 }
