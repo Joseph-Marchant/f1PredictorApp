@@ -1,37 +1,37 @@
 {
-  "Round": 6,
+  "Round": 7,
   "Users": [
     {
       "Name": "Random AI",
-      "Score": 0
+      "Score": 1
     },
     {
       "Name": "Smart AI",
-      "Score": 9
+      "Score": 12
     },
     {
       "Name": "Actual AI",
-      "Score": 15
+      "Score": 21
     },
     {
       "Name": "Joe",
-      "Score": 21
+      "Score": 24
     },
     {
       "Name": "Will",
-      "Score": 15
+      "Score": 19
     },
     {
       "Name": "Yoda",
-      "Score": 21
+      "Score": 27
     },
     {
       "Name": "Dan",
-      "Score": 17
+      "Score": 23
     },
     {
       "Name": "Ryan",
-      "Score": 21
+      "Score": 25
     }
   ]
 }
