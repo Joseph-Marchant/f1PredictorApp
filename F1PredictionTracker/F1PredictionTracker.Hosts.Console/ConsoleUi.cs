@@ -60,34 +60,15 @@ public class ConsoleUi(
     
     private async Task<string> PerformFunction(int function)
     {
-        var response = string.Empty;
-        switch(function)
+        return function switch
         {
-            case 1:
-                response = await buildUserPredictionService.BuildPredictionAsync();
-                break;
-            case 2:
-                response = await predictionGenerationService.GeneratePredictionsAsync();
-                break;
-            case 3:
-                response = predictionShowService.ShowPredictionScores();
-                break;
-            case 4:
-                var scoreResponse = await predictionScoringService.ScorePredictions();
-                var showResponse = predictionShowService.ShowPredictionScores();
-                response = $"{scoreResponse}\n\n{showResponse}";
-                break;
-            case 5:
-                response = await raceResultEventService.PollRaceResultAsync();
-                break;
-            case 6:
-                response = QuitCommand;
-                break;
-            default:
-                response = "Invalid Input";
-                break;
-        }
-        
-        return response;
+            1 => await buildUserPredictionService.BuildPredictionAsync(),
+            2 => await predictionGenerationService.GeneratePredictionsAsync(),
+            3 => predictionShowService.ShowPredictionScores(),
+            4 => $"{await predictionScoringService.ScorePredictions()}\n\n{predictionShowService.ShowPredictionScores()}",
+            5 => $"{await raceResultEventService.PollRaceResultAsync()}\n\n{predictionShowService.ShowPredictionScores()}",
+            6 => QuitCommand,
+            _ => "Invalid Input",
+        };
     }
 }
