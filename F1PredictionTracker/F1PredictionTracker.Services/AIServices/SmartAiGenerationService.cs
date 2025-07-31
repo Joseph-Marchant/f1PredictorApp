@@ -11,7 +11,7 @@ public class SmartAiGenerationService(
     public async Task<string> GeneratePredictionsAsync()
     {
         var state = retrieveState.GetState();
-        var driversStandings = await getDriverStandings.GetDriverStandingsAsync(state.Year, state.LastScoredRound);
+        var driversStandings = await getDriverStandings.GetDriverStandingsAsync(state.Year, state.CurrentRound);
         var currentDrivers = await getDrivers.GetDriversAsync(state.Year, state.CurrentRound);
         var drivers = this.GetWeightedDriversList(driversStandings, currentDrivers);
         var randomPrediction = this.GetRandomPrediction(drivers);
