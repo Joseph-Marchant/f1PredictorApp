@@ -1,1 +1,37 @@
-[]
+[
+  {
+    "Name": "Joe",
+    "Round": 21,
+    "First": "NOR",
+    "Second": "PIA",
+    "Third": "ANT"
+  },
+  {
+    "Name": "Will",
+    "Round": 21,
+    "First": "PIA",
+    "Second": "HAD",
+    "Third": "NOR"
+  },
+  {
+    "Name": "Actual AI",
+    "Round": 21,
+    "First": "NOR",
+    "Second": "ANT",
+    "Third": "RUS"
+  },
+  {
+    "Name": "Random AI",
+    "Round": 21,
+    "First": "OCO",
+    "Second": "HAM",
+    "Third": "BOR"
+  },
+  {
+    "Name": "Smart AI",
+    "Round": 21,
+    "First": "LEC",
+    "Second": "ANT",
+    "Third": "NOR"
+  }
+]
