@@ -24,6 +24,7 @@ public class PredictionScoringService(
         foreach (var prediction in predictions)
         {
             var predictionScore = this.ScorePrediction(prediction, raceResult.Podium);
+            prediction.Score = predictionScore;
             var user = this.GetUser(predictionsStandings, prediction.Name);
             user.Score += predictionScore;
             var pointOrPoints = predictionScore == 1 ? "point" : "points";

@@ -9,6 +9,7 @@ public class Prediction
         this.First = first;
         this.Second = second;
         this.Third = third;
+        this.Score = null;
     }
     
     public Prediction(string name, string first, string second, string third)
@@ -18,6 +19,7 @@ public class Prediction
         this.First = first;
         this.Second = second;
         this.Third = third;
+        this.Score = null;
     }
     
     public string Name { get; }
@@ -29,4 +31,6 @@ public class Prediction
     public string Second { get; }
     
     public string Third { get; }
+
+    public int? Score { get; set; }
 }
