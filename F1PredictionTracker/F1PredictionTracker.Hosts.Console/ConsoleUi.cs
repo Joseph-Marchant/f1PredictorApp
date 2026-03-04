@@ -7,7 +7,6 @@ using System;
 public class ConsoleUi(
     BuildUserPredictionService buildUserPredictionService,
     PredictionGenerationService predictionGenerationService,
-    PredictionScoringService predictionScoringService,
     PredictionShowService predictionShowService,
     RaceResultEventService raceResultEventService)
 {
@@ -42,9 +41,8 @@ public class ConsoleUi(
             "2: Generate AI Predictions\n" +
             "3: Set Default Prediction\n" +
             "4: Show Scores\n" +
-            "5: Score Predictions and Show Scores\n" + 
-            "6: Score Predictions and Show Scores (Event Driven)\n" +
-            "7: Quit\n" +
+            "5: Score Predictions and Show Scores\n" +
+            "6: Quit\n" +
             "Function: ";
         Console.Write(inputMessage);
         var inputAsString = Console.ReadLine();
@@ -67,9 +65,8 @@ public class ConsoleUi(
             2 => await predictionGenerationService.GeneratePredictionsAsync(),
             3 => predictionShowService.ShowPredictionScores(),
             4 => predictionShowService.ShowPredictionScores(),
-            5 => $"{await predictionScoringService.ScorePredictions()}\n\n{predictionShowService.ShowPredictionScores()}",
-            6 => $"{await raceResultEventService.PollRaceResultAsync()}\n\n{predictionShowService.ShowPredictionScores()}",
-            7 => QuitCommand,
+            5 => $"{await raceResultEventService.PollRaceResultAsync()}\n\n{predictionShowService.ShowPredictionScores()}",
+            6 => QuitCommand,
             _ => "Invalid Input",
         };
     }
