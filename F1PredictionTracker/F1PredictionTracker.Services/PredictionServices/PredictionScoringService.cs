@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using F1PredictionTracker.Models;
 using F1PredictionTracker.Ports;
 
@@ -18,6 +19,7 @@ public class PredictionScoringService(
         var raceResult = await getRaceResult.GetRaceResultAsync(state.Year, state.CurrentRound);
         var predictions = retrievePredictions.GetPredictions();
         var predictionsStandings = retrievePredictionStandings.GetPredictionStandings();
+        this.AddDefaultPredictions(predictions,  predictionsStandings);
         var responses = new List<string> {$"F1 Prediction Results {state.Year}-{state.CurrentRound}:"};
         foreach (var prediction in predictions)
         {
@@ -29,12 +31,33 @@ public class PredictionScoringService(
         }
 
         storePredictions.StorePredictions(new List<Prediction>());
+        state.SeasonPredictions[state.CurrentRound.ToString()] = predictions;
         state.LastScoredRound = state.CurrentRound;
         state.CurrentRound += 1;
         storeState.SaveState(state);
         predictionsStandings.Round = state.CurrentRound;
         storePredictionStandings.StorePredictionStandings(predictionsStandings);
         return string.Join("\n", responses);
+    }
+
+    private void AddDefaultPredictions(IList<Prediction> predictions, PredictionStandings predictionsStandings)
+    {
+        foreach (var user in predictionsStandings.Users)
+        {
+            var prediction = predictions.FirstOrDefault(p => p.Name == user.Name);
+            if (prediction != null)
+            {
+                continue;
+            }
+
+            var defaultPrediction = retrievePredictions.GetDefaultPrediction(user);
+            if (defaultPrediction == null)
+            {
+                continue;
+            }
+            
+            predictions.Add(defaultPrediction);
+        }
     }
 
     private User GetUser(PredictionStandings predictionStandings, string userName)
@@ -51,33 +74,41 @@ public class PredictionScoringService(
 
     private int ScorePrediction(Prediction prediction, List<string> raceResults)
     {
-        var presenceScore = 0;
-        var prescenceBonus = 0;
-        var positionScore = 0;
-        var positionBonus = 0;
-
-        if (raceResults.Contains(prediction.First))
+        var drivers = new List<string> { prediction.First, prediction.Second, prediction.Third };
+        var score = 0;
+        var onPodium = 0;
+        var perfect = 0;
+        foreach (var driver in drivers)
         {
-            presenceScore += 1;
-            positionScore += raceResults[0] == prediction.First ? 1 : 0;
-        }
-
-        if (raceResults.Contains(prediction.Second))
-        {
-            presenceScore += 1;
-            prescenceBonus += presenceScore > 1 ? 1 : 0;
-            positionScore += raceResults[1] == prediction.Second ? 1 : 0;
-            positionBonus += positionScore > 1 ? 1 : 0;
-        }
-
-        if (raceResults.Contains(prediction.Third))
-        {
-            presenceScore += 1;
-            prescenceBonus += presenceScore > 1 ? 1 : 0;
-            positionScore += raceResults[2] == prediction.Third ? 1 : 0;
-            positionBonus += positionScore > 1 ? 1 : 0;
+            if (!raceResults.Contains(driver))
+            {
+                continue;
+            }
+            var driverPosition = raceResults.IndexOf(driver);
+            var predictionPosition = drivers.IndexOf(driver);
+            var diff = Math.Abs(driverPosition - predictionPosition);
+            switch (diff)
+            {
+                case 0:
+                    score += 3;
+                    onPodium += 1;
+                    perfect += 1;
+                    break;
+                case 1:
+                    score += 2;
+                    onPodium += 1;
+                    break;
+                case 2:
+                    score += 3;
+                    onPodium += 1;
+                    break;
+                default:
+                    throw new InvalidOperationException("An error occured during prediction calculation");
+            }
         }
         
-        return presenceScore + prescenceBonus + positionScore + positionBonus;
+        score += onPodium == 3 ? 3 : 0;
+        score += perfect == 3 ? 5 : 0;
+        return score;
     }
 }

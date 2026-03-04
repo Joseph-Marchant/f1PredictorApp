@@ -40,10 +40,11 @@ public class ConsoleUi(
         const string inputMessage = "Please choose a valid function from the following\n" +
             "1: Save Prediction\n" +
             "2: Generate AI Predictions\n" +
-            "3: Show Scores\n" +
-            "4: Score Predictions and Show Scores\n" + 
-            "5: Score Predictions and Show Scores (Event Driven)\n" +
-            "6: Quit\n" +
+            "3: Set Default Prediction\n" +
+            "4: Show Scores\n" +
+            "5: Score Predictions and Show Scores\n" + 
+            "6: Score Predictions and Show Scores (Event Driven)\n" +
+            "7: Quit\n" +
             "Function: ";
         Console.Write(inputMessage);
         var inputAsString = Console.ReadLine();
@@ -65,9 +66,10 @@ public class ConsoleUi(
             1 => await buildUserPredictionService.BuildPredictionAsync(),
             2 => await predictionGenerationService.GeneratePredictionsAsync(),
             3 => predictionShowService.ShowPredictionScores(),
-            4 => $"{await predictionScoringService.ScorePredictions()}\n\n{predictionShowService.ShowPredictionScores()}",
-            5 => $"{await raceResultEventService.PollRaceResultAsync()}\n\n{predictionShowService.ShowPredictionScores()}",
-            6 => QuitCommand,
+            4 => predictionShowService.ShowPredictionScores(),
+            5 => $"{await predictionScoringService.ScorePredictions()}\n\n{predictionShowService.ShowPredictionScores()}",
+            6 => $"{await raceResultEventService.PollRaceResultAsync()}\n\n{predictionShowService.ShowPredictionScores()}",
+            7 => QuitCommand,
             _ => "Invalid Input",
         };
     }

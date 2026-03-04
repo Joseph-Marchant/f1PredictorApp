@@ -4,6 +4,8 @@ namespace F1PredictionTracker.Adapters.FileStorage;
 
 public class FileStorageConfig
 {
+    public string DefaultPredictionsFilePath => GetFilePath("defaultPredictions.json");
+    
     public string PredictionsFilePath => GetFilePath("predictions.json");
     
     public string PredictionsStandingsFilePath => GetFilePath("predictionsStandings.json");
@@ -13,6 +15,6 @@ public class FileStorageConfig
     private string GetFilePath(string fileName)
     {
         var solutionDir = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\.."));
-        return Path.Combine(solutionDir, "F1PredictionTracker.Adapters.FileStorage", "StoredFiles", fileName);
+        return Path.Combine(solutionDir, "F1PredictionTracker.Adapters.FileStorage", "StoredFiles", "2026", fileName);
     }
 }

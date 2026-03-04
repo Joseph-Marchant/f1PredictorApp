@@ -11,9 +11,18 @@ public class Prediction
         this.Third = third;
     }
     
+    public Prediction(string name, string first, string second, string third)
+    {
+        this.Name = name;
+        this.Round = null;
+        this.First = first;
+        this.Second = second;
+        this.Third = third;
+    }
+    
     public string Name { get; }
     
-    public int Round { get; }
+    public int? Round { get; }
     
     public string First { get; }
     

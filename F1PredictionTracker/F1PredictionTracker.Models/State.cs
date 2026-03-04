@@ -7,4 +7,6 @@ public class State
     public int CurrentRound { get; set; }
     
     public required string Year { get; set; }
+    
+    public required Dictionary<string, IList<Prediction>> SeasonPredictions  { get; set; }
 }

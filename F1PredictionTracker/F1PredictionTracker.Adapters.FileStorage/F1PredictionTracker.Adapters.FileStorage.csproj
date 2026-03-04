@@ -16,13 +16,25 @@
     </ItemGroup>
 
     <ItemGroup>
-      <None Update="StoredFiles\predictions.json">
+      <None Update="StoredFiles\2025\predictions.json">
         <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       </None>
-      <None Update="StoredFiles\predictionsStandings.json">
+      <None Update="StoredFiles\2025\predictionsStandings.json">
         <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       </None>
-      <None Update="StoredFiles\state.json">
+      <None Update="StoredFiles\2025\state.json">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="StoredFiles\2026\defaultPredictions.json">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="StoredFiles\2026\predictions.json">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="StoredFiles\2026\predictionsStandings.json">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="StoredFiles\2026\state.json">
         <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       </None>
     </ItemGroup>
