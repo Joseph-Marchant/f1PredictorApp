@@ -23,7 +23,15 @@ public class GetDriverStandings : IGetDriverStandings
         var reader = new StreamReader(bodyStream);
         var responseJson = await reader.ReadToEndAsync();
         var standings = JsonConvert.DeserializeObject<MRDataResponse>(responseJson);
-        var drivers = this.GetStandings(standings, round);
+        var drivers = new List<string>();
+        try
+        {
+            drivers = this.GetStandings(standings, round);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error getting the standings, {ex.Message}");
+        }
         
         return drivers;
     }

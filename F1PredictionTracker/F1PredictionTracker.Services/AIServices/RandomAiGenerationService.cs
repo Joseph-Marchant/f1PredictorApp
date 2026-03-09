@@ -7,12 +7,12 @@ public class RandomAiGenerationService(
     IGetDrivers getDrivers,
     StorePredictionService storePredictionService)
 {
-    public async Task<string> GeneratePredictionsAsync()
+    public async Task<string> GeneratePredictionsAsync(string aiName = "Random AI")
     {
         var state = retrieveState.GetState();
         var drivers = await getDrivers.GetDriversAsync(state.Year, state.CurrentRound);
         var randomPrediction = this.GetRandomPrediction(drivers);
-        var response = storePredictionService.StorePrediction("Random AI", randomPrediction);
+        var response = storePredictionService.StorePrediction(aiName, randomPrediction);
         return response;
     }
 

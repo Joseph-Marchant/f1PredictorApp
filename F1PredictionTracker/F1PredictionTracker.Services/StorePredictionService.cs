@@ -27,7 +27,7 @@ public class StorePredictionService(
             throw new ArgumentException($"User has already made a prediction for round {state.CurrentRound}");
         }
         
-        predictions.Add(new Prediction(userName, state.CurrentRound, prediction[0].ToUpper(), prediction[1].ToUpper(), prediction[2].ToUpper()));
+        predictions.Add(new Prediction(userName, prediction[0].ToUpper(), prediction[1].ToUpper(), prediction[2].ToUpper(), state.CurrentRound));
         storePredictions.StorePredictions(predictions);
         return $"{userName}'s prediction of {prediction[0].ToPascalCase()}{prediction[1].ToPascalCase()}{prediction[2].ToPascalCase()} was successfully stored";
     }
@@ -68,7 +68,7 @@ public class StorePredictionService(
             throw new ArgumentException($"User has already made a prediction for round {state.CurrentRound}");
         }
         
-        predictions.Add(new Prediction(userName, state.CurrentRound, prediction[0].ToUpper(), prediction[1].ToUpper(), prediction[2].ToUpper()));
+        predictions.Add(new Prediction(userName, prediction[0].ToUpper(), prediction[1].ToUpper(), prediction[2].ToUpper(), state.CurrentRound));
         return predictions;
     }
 }

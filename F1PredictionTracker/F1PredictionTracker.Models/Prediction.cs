@@ -1,36 +1,29 @@
 ﻿namespace F1PredictionTracker.Models;
 
+using System.Text.Json.Serialization;
+
 public class Prediction
 {
-    public Prediction(string name, int round, string first, string second, string third)
+    [JsonConstructor]
+    public Prediction(string name, string first, string second, string third, int? round = null, int? score = null)
     {
         this.Name = name;
         this.Round = round;
         this.First = first;
         this.Second = second;
         this.Third = third;
-        this.Score = null;
+        this.Score = score;
     }
     
-    public Prediction(string name, string first, string second, string third)
-    {
-        this.Name = name;
-        this.Round = null;
-        this.First = first;
-        this.Second = second;
-        this.Third = third;
-        this.Score = null;
-    }
+    public string Name { get; set; }
     
-    public string Name { get; }
+    public int? Round { get; set; }
     
-    public int? Round { get; }
+    public string First { get; set; }
     
-    public string First { get; }
+    public string Second { get; set; }
     
-    public string Second { get; }
-    
-    public string Third { get; }
+    public string Third { get; set; }
 
     public int? Score { get; set; }
 }

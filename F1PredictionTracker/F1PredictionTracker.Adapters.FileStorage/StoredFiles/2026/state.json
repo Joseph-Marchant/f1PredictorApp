@@ -1,6 +1,73 @@
 {
-  "LastScoredRound": 0,
-  "CurrentRound": 1,
+  "LastScoredRound": 1,
+  "CurrentRound": 2,
   "Year": "2026",
-  "SeasonPredictions": {}
+  "SeasonPredictions": {
+    "1": [
+      {
+        "Name": "Joe",
+        "Round": 1,
+        "First": "RUS",
+        "Second": "ANT",
+        "Third": "HAM",
+        "Score": 6
+      },
+      {
+        "Name": "Will",
+        "Round": 1,
+        "First": "RUS",
+        "Second": "HAD",
+        "Third": "HAM",
+        "Score": 3
+      },
+      {
+        "Name": "Dan",
+        "Round": 1,
+        "First": "HAD",
+        "Second": "RUS",
+        "Third": "HAM",
+        "Score": 2
+      },
+      {
+        "Name": "Yoda",
+        "Round": 1,
+        "First": "RUS",
+        "Second": "LEC",
+        "Third": "PIA",
+        "Score": 5
+      },
+      {
+        "Name": "Ryan",
+        "Round": 1,
+        "First": "RUS",
+        "Second": "LEC",
+        "Third": "HAD",
+        "Score": 5
+      },
+      {
+        "Name": "Actual AI",
+        "Round": 1,
+        "First": "VER",
+        "Second": "NOR",
+        "Third": "LEC",
+        "Score": 3
+      },
+      {
+        "Name": "Random AI",
+        "Round": 1,
+        "First": "LIN",
+        "Second": "NOR",
+        "Third": "SAI",
+        "Score": 0
+      },
+      {
+        "Name": "Smart AI",
+        "Round": 1,
+        "First": "BEA",
+        "Second": "NOR",
+        "Third": "BOT",
+        "Score": 0
+      }
+    ]
+  }
 }

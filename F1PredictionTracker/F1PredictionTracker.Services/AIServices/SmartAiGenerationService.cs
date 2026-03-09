@@ -6,16 +6,23 @@ public class SmartAiGenerationService(
     IRetrieveState retrieveState,
     IGetDrivers getDrivers,
     IGetDriverStandings getDriverStandings,
-    StorePredictionService storePredictionService)
+    StorePredictionService storePredictionService,
+    RandomAiGenerationService randomAiGenerationService)
 {
     public async Task<string> GeneratePredictionsAsync()
     {
         var state = retrieveState.GetState();
+        var aiName = "Smart AI";
         var driversStandings = await getDriverStandings.GetDriverStandingsAsync(state.Year, state.LastScoredRound);
+        if (!driversStandings.Any())
+        {
+            return await randomAiGenerationService.GeneratePredictionsAsync(aiName);
+        }
+        
         var currentDrivers = await getDrivers.GetDriversAsync(state.Year, state.CurrentRound);
         var drivers = this.GetWeightedDriversList(driversStandings, currentDrivers);
         var randomPrediction = this.GetRandomPrediction(drivers);
-        var response = storePredictionService.StorePrediction("Smart AI", randomPrediction);
+        var response = storePredictionService.StorePrediction(aiName, randomPrediction);
         return response;
     }
 
