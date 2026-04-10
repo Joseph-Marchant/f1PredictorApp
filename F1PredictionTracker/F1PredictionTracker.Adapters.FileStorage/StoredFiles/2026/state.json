@@ -1,6 +1,6 @@
 {
-  "LastScoredRound": 1,
-  "CurrentRound": 2,
+  "LastScoredRound": 3,
+  "CurrentRound": 4,
   "Year": "2026",
   "SeasonPredictions": {
     "1": [
@@ -67,6 +67,138 @@
         "Second": "NOR",
         "Third": "BOT",
         "Score": 0
+      }
+    ],
+    "2": [
+      {
+        "Name": "Joe",
+        "Round": 2,
+        "First": "RUS",
+        "Second": "ANT",
+        "Third": "HAM",
+        "Score": 10
+      },
+      {
+        "Name": "Will",
+        "Round": 2,
+        "First": "RUS",
+        "Second": "HAM",
+        "Third": "PIA",
+        "Score": 4
+      },
+      {
+        "Name": "Yoda",
+        "Round": 2,
+        "First": "RUS",
+        "Second": "HAM",
+        "Third": "LEC",
+        "Score": 4
+      },
+      {
+        "Name": "Dan",
+        "Round": 2,
+        "First": "HAM",
+        "Second": "RUS",
+        "Third": "LEC",
+        "Score": 6
+      },
+      {
+        "Name": "Ryan",
+        "Round": 2,
+        "First": "RUS",
+        "Second": "LEC",
+        "Third": "PIA",
+        "Score": 2
+      },
+      {
+        "Name": "Actual AI",
+        "Round": 2,
+        "First": "VER",
+        "Second": "PIA",
+        "Third": "RUS",
+        "Score": 2
+      },
+      {
+        "Name": "Random AI",
+        "Round": 2,
+        "First": "LIN",
+        "Second": "ALO",
+        "Third": "SAI",
+        "Score": 0
+      },
+      {
+        "Name": "Smart AI",
+        "Round": 2,
+        "First": "PER",
+        "Second": "GAS",
+        "Third": "LIN",
+        "Score": 0
+      }
+    ],
+    "3": [
+      {
+        "Name": "Joe",
+        "Round": 3,
+        "First": "PIA",
+        "Second": "RUS",
+        "Third": "ANT",
+        "Score": 5
+      },
+      {
+        "Name": "Will",
+        "Round": 3,
+        "First": "HAM",
+        "Second": "ANT",
+        "Third": "PIA",
+        "Score": 4
+      },
+      {
+        "Name": "Ryan",
+        "Round": 3,
+        "First": "RUS",
+        "Second": "ANT",
+        "Third": "LEC",
+        "Score": 5
+      },
+      {
+        "Name": "Dan",
+        "Round": 3,
+        "First": "HAM",
+        "Second": "ANT",
+        "Third": "PIA",
+        "Score": 4
+      },
+      {
+        "Name": "Actual AI",
+        "Round": 3,
+        "First": "RUS",
+        "Second": "ANT",
+        "Third": "LEC",
+        "Score": 5
+      },
+      {
+        "Name": "Random AI",
+        "Round": 3,
+        "First": "NOR",
+        "Second": "HUL",
+        "Third": "ALO",
+        "Score": 0
+      },
+      {
+        "Name": "Smart AI",
+        "Round": 3,
+        "First": "STR",
+        "Second": "LIN",
+        "Third": "ANT",
+        "Score": 3
+      },
+      {
+        "Name": "Yoda",
+        "Round": 3,
+        "First": "RUS",
+        "Second": "PIA",
+        "Third": "LEC",
+        "Score": 6
       }
     ]
   }

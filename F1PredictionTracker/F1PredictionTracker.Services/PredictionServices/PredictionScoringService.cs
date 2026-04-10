@@ -1,4 +1,3 @@
-using System.ComponentModel;
 using F1PredictionTracker.Models;
 using F1PredictionTracker.Ports;
 
@@ -21,14 +20,21 @@ public class PredictionScoringService(
         var predictionsStandings = retrievePredictionStandings.GetPredictionStandings();
         this.AddDefaultPredictions(predictions,  predictionsStandings);
         var responses = new List<string> {$"F1 Prediction Results {state.Year}-{state.CurrentRound}:"};
+        var results = new List<(string Name, int Score)>();
         foreach (var prediction in predictions)
         {
             var predictionScore = this.ScorePrediction(prediction, raceResult.Podium);
             prediction.Score = predictionScore;
             var user = this.GetUser(predictionsStandings, prediction.Name);
             user.Score += predictionScore;
-            var pointOrPoints = predictionScore == 1 ? "point" : "points";
-            responses.Add($"{user.Name} scored {predictionScore} {pointOrPoints}.");
+            results.Add((user.Name, predictionScore));
+        }
+
+        results = results.OrderByDescending(r => r.Score).ThenBy(r => r.Name).ToList();
+        foreach (var result in results)
+        {
+            var pointOrPoints = result.Score == 1 ? "point" : "points";
+            responses.Add($"{result.Name} scored {result.Score} {pointOrPoints}.");
         }
 
         storePredictions.StorePredictions(new List<Prediction>());

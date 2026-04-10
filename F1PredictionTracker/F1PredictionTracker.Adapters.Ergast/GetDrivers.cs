@@ -1,5 +1,4 @@
 using F1PredictionTracker.Adapters.Ergast.Models;
-using F1PredictionTracker.Models;
 using F1PredictionTracker.Ports;
 using Newtonsoft.Json;
 
@@ -44,6 +43,6 @@ public class GetDrivers : IGetDrivers
             throw new InvalidDataException($"No drivers found from API for round: {round}");
         }
         
-        return drivers.Select(driver => driver.code ??  throw new  NullReferenceException("Driver code not found.")).ToList();
+        return drivers.Where(driver => driver.code != null).Select(driver => driver.code!).ToList();
     }
 }
